@@ -1,0 +1,33 @@
+# Maybe?
+
+- horiz bar
+- heatmap
+- stacked bar
+- boxplot
+- column sparkline
+- win/loss sparkline
+- treemap
+- matrix diagram
+- pictorial fracrion
+- horiz hist
+- waffle
+- funnel
+- linear process diag
+- grouped bar
+- nested/layered proportional area
+- pictorial unit
+- dot plot
+- pyramid diag
+- dumbell plot
+- bullet diag
+- venn diag
+- partition layer chart icicle diag
+- stepped line graph
+- scaled up number
+- lollypop chart
+- tally chart
+- comparison chart
+- kagi chart
+- dot matix
+- pictogram
+- stem and leaf 
