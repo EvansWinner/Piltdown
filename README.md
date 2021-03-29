@@ -74,12 +74,37 @@ FIXME: Actually verify the name and all that.
 
 # Installation
 
-_Pypi_
+Clone the repository, and import tweeviz from the root directory
+or add it to your Python path, or however you do it.
+I blew a full day trying to figure out how to get Python's
+module system to work the way I wanted it, and it's my way
+or the highway, so there is no pip package unless someone
+tells me how to organize my source code the way I want it.
 
-> $ pip install tweeviz
+Ok, but for real, do
 
-_Clone the repository and, you know, load up the files or something_
+> >>> import tweeviz as tv
 
-> $ Command line stuff goes here
+and then you can, for example, do,
+
+> >>> tv.bar(mydict,mywidth)
+
+and it will return a bar chart as a string.
 
 
+# Hacking
+
+Project goals:
+
+ - Simple
+ - Really simple
+ - Simple enough to just write static documentation here.
+ - Don't try to do anything but create the charts and graphs.
+   Just functions that return strings.
+   Leave Twitter posting, statistical preprocessing,
+   and mixing output with other strings (titles, general writting, etc.)
+   to the user/other libraries.
+ - Easy to use.
+ - Just focused on the Twitter use case.
+   Not a general solution to the ASCII-art data viz problem,
+   which is never-ending.
