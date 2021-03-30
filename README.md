@@ -5,7 +5,9 @@
 *"Making your mindless Twitter propaganda look more scientific since 2021!"*
 
 
-## Introduction (or, what is it? and what's it for?)
+## Introduction
+
+*or, What is it? and what's it for?*
 
 Piltdown is a tiny, nay, even trivial Python library
 that generates Unicode strings of bar charts
