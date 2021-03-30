@@ -5,7 +5,7 @@
 
 ## Introduction (or, what is it? and what's it for?)
 
-Tweeviz is a tiny, nay, even trivial Python library
+Piltdown is a tiny, nay, even trivial Python library
 that generates Unicode strings of bar charts
 and some other data visualization thingies
 which are meant to be included in your Twitter posts.
@@ -36,26 +36,26 @@ on a lark. Don't get all testy with me.
 For most of the types of plot, you will specify your data set,
 (typically a list, list of tuples, dict, etc.).
 Generating this from a datafrane or other form is your problem--
-Tweeviz just generates strings. That's all.
+Piltdown just generates strings. That's all.
 There are a million utilities that could be included 
 to post your string to Twitter for you,
 or to do other Unicode tricks,
 like bold or italics,
 but at least for the moment
-Tweeviz wants to do one thing and do it (tollerably) well:
+Piltdown wants to do one thing and do it (tollerably) well:
 generate strings that work as data viz in the space of a tweet.
 That means generally just the graphic elements and sometimes axis labels.
 Titles and keys are mostly your problem.
 But the idea is that all you have to do is concatenate any string you want 
-with the output of your Tweeviz graph,
-and thereby do we identify Bob as your parent's brother.
+with the output of your Piltdown graph,
+and thus becometh Robert your parent's brother.
 
 
 # The Plots
 
 For each of the entries below, we assume you have already done something like
 
-> from tweeviz import bar
+> from piltdown import bar
 
 -- for example if you are using the bar() function to create a bar chart.
 
@@ -76,7 +76,7 @@ FIXME: Actually verify the name and all that.
 
 # Installation
 
-Clone the repository, and import tweeviz from the root directory
+Clone the repository, and import piltdown from the root directory
 or add it to your Python path, or however you do it.
 I blew a full day trying to figure out how to get Python's
 module system to work the way I wanted it, and it's my way
@@ -85,11 +85,11 @@ tells me how to organize my source code the way I want it.
 
 Ok, but for real, do
 
-> >>> import tweeviz as tv
+> >>> import piltdown as pilt
 
 and then you can, for example, do,
 
-> >>> tv.bar(mydict,mywidth)
+> >>> pilt.bar(mydict,mywidth)
 
 and it will return a bar chart as a string.
 
