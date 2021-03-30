@@ -1,7 +1,8 @@
 # Piltdown
 
 
-![Piltdown Man](https://upload.wikimedia.org/wikipedia/commons/3/3b/Piltdown_man.jpg)
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Piltdown_man.jpg"
+     width="100px" align="right" alt="Piltdown Man"/>
 *"Making your mindless Twitter propaganda look more scientific since 2021!"*
 
 
