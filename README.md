@@ -1,4 +1,6 @@
-# Tweeviz --- bar charts and stuff in your tweets!
+# Piltdown
+
+*"Making your mindless Twitter propaganda look more scientific since 2021!"*
 
 
 ## Introduction (or, what is it? and what's it for?)
