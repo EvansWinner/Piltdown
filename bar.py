@@ -1,23 +1,27 @@
+"""Bar charts for Piltdown."""
 from typing import Dict, List
 import piltdata
 import piltutil
 
 
-def max_bar_width(d: Dict[str, float], w: int) -> int:
-    return w - max(list(map(len, d.keys())))
+def max_bar_width(data: Dict[str, float], width: int) -> int:
+    """Caluclate the maximum width of a bar based on the longest label."""
+    return width - max(list(map(len, data.keys())))
 
 
-# def make_line(lab:str,v:float,lineBreak:bool,keyLabels)->str:
+def make_line(label: str, value: float, line_break: bool, key_labels) -> str:
+    """Pass."""
+    pass
 
 
 def bar(
-    d: Dict[str, float],
-    w: int,
+    data: Dict[str, float],
+    width: int,
     line_breaks: bool = False,
     key_labels: List[str] = piltdata.default_labels,
 ) -> str:
-    """Return a bar plot given a dict d of {"Label":value} pairs and max line width, w."""
-    ret = ""
-    for l, v in d.items():
-        ret += make_line(l, v, line_breaks, key_labels)
+    """Return a bar plot given a dict d of {"label":value} pairs and max line width, w."""
+    ret: str = ""
+    for line, value in data.items():
+        ret += make_line(line, value, line_breaks, key_labels)
     return ret

@@ -1,3 +1,5 @@
+"""Unicode tally charts for Piltdown."""
+from typing import Dict
 import piltdata
 import piltutil
 
@@ -10,8 +12,9 @@ onzie_twozies = {
 }
 
 
-def tally(data):
-    ret = ""
+def tally(data: Dict[str, int]):
+    """Given a dict of "label":value pairs, produce a tally chart with Unicode chars."""
+    ret: str = ""
     for label, value in data.items():
         if all(key in piltdata.monospace for key in label):
             label = piltutil.to_monospace(label)
@@ -23,6 +26,3 @@ def tally(data):
         )
         ret += onzie_twozies[value - fives * 5] + "\n"
     return ret
-
-
-print(tally({"av": 24, " b": 13}))
