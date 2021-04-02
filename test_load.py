@@ -1,3 +1,3 @@
-import tweeviz as tv
+import piltdown pdn
 
-tv.bar({"a": 1, "b": 2}, 10)
+pdn.bar({"a": 1, "b": 2}, 10)
