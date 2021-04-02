@@ -1,13 +1,11 @@
 from typing import Dict, List
 import piltdata
 
-emptyBlock = "　"
-
 
 def scaled_up_number(
     number: str,
     font: Dict[str, List[str]] = piltdata.default3x5font,
-    leadingPad: int = 4,
+    leading_pad: int = 4,
 ) -> str:
     try:  # try to coerce to string to be nice
         number = str(number)
@@ -15,8 +13,8 @@ def scaled_up_number(
         print("Can't coerce input to string.")
     ret = ""
     for line in range(len(font["0"])):
-        ret += (leadingPad - 1) * piltdata.emptyBlock
+        ret += (leading_pad - 1) * piltdata.empty_block
         for char in number:
-            ret += piltdata.emptyBlock + font[char][line]
+            ret += piltdata.empty_block + font[char][line]
         ret += "\n"
     return ret

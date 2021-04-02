@@ -8,7 +8,6 @@ monospace_keys = " 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxy
 monospace = dict(zip(monospace_keys, monospace_chars))
 
 
-
 # When not supplied with a list of labels, we use these
 latin_chars = "abcdefghijklmnopqrstuvwxyz"
 greek_chars = "αβγδεζηθικλμνξοπρστυφχψω"
@@ -18,6 +17,18 @@ default_labels = (
     + [x for x in latin_chars]
     + [x for x in greek_chars]
 )
+
+
+eight_eighths = "█"
+eighths = {
+    7: "▉",
+    6: "▊",
+    5: "▋",
+    4: "▌",
+    3: "▍",
+    2: "▎",
+    1: "▏",
+}
 
 
 tally_one = "𝍩"

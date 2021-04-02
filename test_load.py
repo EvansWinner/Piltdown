@@ -1,3 +1,3 @@
-import piltdown pdn
+import piltdown as pdn
 
-pdn.bar({"a": 1, "b": 2}, 10)
+bar.bar({"a": 1, "b": 2}, 10)

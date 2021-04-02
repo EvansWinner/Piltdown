@@ -13,9 +13,11 @@ onzie_twozies = {
 def tally(data):
     ret = ""
     for label, value in data.items():
-        if all(key in piltdata.monospace for key in label):label=piltutil.to_monospace(label)
+        if all(key in piltdata.monospace for key in label):
+            label = piltutil.to_monospace(label)
         fives = value // 5
-        ret += (label
+        ret += (
+            label
             + piltutil.to_monospace(":")
             + ((piltdata.tally_five + piltdata.empty_block) * fives)
         )
@@ -23,4 +25,4 @@ def tally(data):
     return ret
 
 
-print(tally({"av":24," b":13}))
+print(tally({"av": 24, " b": 13}))
