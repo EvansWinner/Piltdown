@@ -3,26 +3,30 @@ from typing import Dict
 import piltdata
 import piltutil
 
-onzie_twozies = {
+ONEZIE_TWOZIES = {
     0: "",
-    1: piltdata.tally_one,
-    2: piltdata.tally_two,
-    3: piltdata.tally_three,
-    4: piltdata.tally_four,
+    1: piltdata.TALLY_ONE,
+    2: piltdata.TALLY_TWO,
+    3: piltdata.TALLY_THREE,
+    4: piltdata.TALLY_FOUR,
 }
 
 
 def tally(data: Dict[str, int]):
-    """Given a dict of "label":value pairs, produce a tally chart with Unicode chars."""
+    """Produce a tally chart.
+
+    Given a dict of "label":value pairs, produce a tally chart with Unicode
+    chars.
+    """
     ret: str = ""
     for label, value in data.items():
-        if all(key in piltdata.monospace for key in label):
+        if all(key in piltdata.MONOSPACE for key in label):
             label = piltutil.to_monospace(label)
         fives = value // 5
         ret += (
             label
             + piltutil.to_monospace(":")
-            + ((piltdata.tally_five + piltdata.empty_block) * fives)
+            + ((piltdata.TALLY_FIVE + piltdata.EMPTY_BLOCK) * fives)
         )
-        ret += onzie_twozies[value - fives * 5] + "\n"
+        ret += ONEZIE_TWOZIES[value - fives * 5] + "\n"
     return ret

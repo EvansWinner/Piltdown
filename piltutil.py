@@ -12,5 +12,5 @@ def to_monospace(string: str) -> str:
     """
     ret = ""
     for character in string:
-        ret += piltdata.monospace[character]
+        ret += piltdata.MONOSPACE[character]
     return ret

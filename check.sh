@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-black *.py
+black --line-length=79 *.py
 pylint *.py
 mypy *.py
 pycodestyle *.py
 pydocstyle *.py
-pytest *.py
+python3 -m pytest *.py
 

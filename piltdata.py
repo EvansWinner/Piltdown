@@ -1,26 +1,33 @@
-empty_block = "　"
+"""Global and shared variables for or potentially for any chart type."""
+EMPTY_BLOCK = "　"
 
-monospace_chars = (
-    empty_block
-    + "０１２３４５６７８９ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚ，．：；！？＂＇｀＾～＿＆＠＃％＋－＊＝＜＞（）［］｛｝￤／＼＄"
+MONOSPACE_CHARS = (
+    EMPTY_BLOCK
+    + "０１２３４５６７８９"
+    + "ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺ"
+    + "ａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚ"
+    + "，．：；！？＂＇｀＾～＿＆＠＃％＋－＊＝＜＞（）［］｛｝￤／＼＄"
 )
-monospace_keys = " 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz,.:;!?\"'`^~_&@#%+-*=<>()[]{}|/\$"
-monospace = dict(zip(monospace_keys, monospace_chars))
+MONOSPACE_KEYS = (
+    " "
+    + "0123456789"
+    + "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    + "abcdefghijklmnopqrstuvwxyz"
+    + ",.:;!?\"'`^~_&@#%+-*=<>()[]{}|/\$"
+)
+MONOSPACE = dict(zip(MONOSPACE_KEYS, MONOSPACE_CHARS))
 
 
 # When not supplied with a list of labels, we use these
-latin_chars = "abcdefghijklmnopqrstuvwxyz"
-greek_chars = "αβγδεζηθικλμνξοπρστυφχψω"
-default_labels = (
-    [x.upper() for x in latin_chars]
-    + [x.upper() for x in greek_chars]
-    + [x for x in latin_chars]
-    + [x for x in greek_chars]
+LATIN_CHARS = "abcdefghijklmnopqrstuvwxyz"
+GREEK_CHARS = "αβγδεζηθικλμνξοπρστυφχψω"
+DEFAULT_LABELS = (
+    LATIN_CHARS + GREEK_CHARS + LATIN_CHARS.upper() + GREEK_CHARS.upper()
 )
 
 
-eight_eighths = "█"
-eighths = {
+EIGHT_EIGHTHS = "█"
+EIGHTHS = {
     7: "▉",
     6: "▊",
     5: "▋",
@@ -31,13 +38,13 @@ eighths = {
 }
 
 
-tally_one = "𝍩"
-tally_two = "𝍪"
-tally_three = "𝍫"
-tally_four = "𝍬"
-tally_five = "ᚎ"
+TALLY_ONE = "𝍩"
+TALLY_TWO = "𝍪"
+TALLY_THREE = "𝍫"
+TALLY_FOUR = "𝍬"
+TALLY_FIVE = "ᚎ"
 
-default3x5font = {
+DEFAULT3X5FONT = {
     "%": [
         "█░▞",
         "░▐░",
