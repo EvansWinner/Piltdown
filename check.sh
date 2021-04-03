@@ -8,6 +8,9 @@ function div {
 div "Running shellcheck against this file..."
 shellcheck check.sh
 
+div "Running mdl to check markdown in README..."
+mdl README.md
+
 div "Running black..."
 black --line-length=79 ./*.py
 
