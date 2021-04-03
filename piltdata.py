@@ -13,7 +13,7 @@ MONOSPACE_KEYS = (
     + "0123456789"
     + "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     + "abcdefghijklmnopqrstuvwxyz"
-    + ",.:;!?\"'`^~_&@#%+-*=<>()[]{}|/\$"
+    + ",.:;!?\"'`^~_&@#%+-*=<>()[]{}|/\\$"
 )
 MONOSPACE = dict(zip(MONOSPACE_KEYS, MONOSPACE_CHARS))
 
