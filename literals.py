@@ -50,6 +50,14 @@ TALLY_THREE = "𝍫"
 TALLY_FOUR = "𝍬"
 TALLY_FIVE = "ᚎ"
 
+ONEZIE_TWOZIES = {
+    0: "",
+    1: TALLY_ONE,
+    2: TALLY_TWO,
+    3: TALLY_THREE,
+    4: TALLY_FOUR,
+}
+
 DEFAULT3X5FONT = {
     "%": [
         "█░▞",

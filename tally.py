@@ -3,14 +3,6 @@ from typing import Dict
 import literals
 import util
 
-ONEZIE_TWOZIES = {
-    0: "",
-    1: literals.TALLY_ONE,
-    2: literals.TALLY_TWO,
-    3: literals.TALLY_THREE,
-    4: literals.TALLY_FOUR,
-}
-
 
 def tally(data: Dict[str, int]):
     """Produce a tally chart.
@@ -28,5 +20,8 @@ def tally(data: Dict[str, int]):
             + util.to_monospace(":")
             + ((literals.TALLY_FIVE + literals.EMPTY_BLOCK) * fives)
         )
-        ret += ONEZIE_TWOZIES[value - fives * 5] + "\n"
+        ret += literals.ONEZIE_TWOZIES[value - fives * 5] + "\n"
     return ret
+
+
+print(tally({"a": 65, "g": 33}))
