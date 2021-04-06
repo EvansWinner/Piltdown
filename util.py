@@ -1,5 +1,5 @@
 """General shared utilities for Piltdown."""
-import piltdata
+import literals
 
 
 def to_monospace(string: str) -> str:
@@ -12,5 +12,5 @@ def to_monospace(string: str) -> str:
     """
     ret = ""
     for character in string:
-        ret += piltdata.MONOSPACE[character]
+        ret += literals.MONOSPACE[character]
     return ret

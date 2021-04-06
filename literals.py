@@ -26,6 +26,12 @@ DEFAULT_LABELS = (
 )
 
 
+# Win/Loss Sparklines
+LOSS_CHAR = "▄"
+WIN_CHAR = "▀"
+ZERO_CHAR = "－"
+
+
 EIGHT_EIGHTHS = "█"
 EIGHTHS = {
     7: "▉",

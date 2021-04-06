@@ -1,5 +1,5 @@
+- Move piltdata.py and piltutil.py to data.py and util.py
 # Maybe?
-
 - horiz bar
 - heatmap
 - stacked bar

@@ -1,11 +1,11 @@
 """Generate a large version of a number in a pseudo-monocode font."""
 from typing import Dict, List
-import piltdata
+import literals
 
 
 def scaled_up_number(
     number: str,
-    font: Dict[str, List[str]] = piltdata.DEFAULT3X5FONT,
+    font: Dict[str, List[str]] = literals.DEFAULT3X5FONT,
     leading_pad: int = 4,
 ) -> str:
     """Given a number as a string, produce a larger version of the number.
@@ -18,8 +18,8 @@ def scaled_up_number(
         print("Can't coerce input to string.")
     ret: str = ""
     for line in range(len(font["0"])):
-        ret += (leading_pad - 1) * piltdata.EMPTY_BLOCK
+        ret += (leading_pad - 1) * literals.EMPTY_BLOCK
         for char in number:
-            ret += piltdata.EMPTY_BLOCK + font[char][line]
+            ret += literals.EMPTY_BLOCK + font[char][line]
         ret += "\n"
     return ret

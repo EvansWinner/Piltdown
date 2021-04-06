@@ -8,7 +8,7 @@ function div {
 div "Running shellcheck against this file..."
 shellcheck check.sh
 
-div "Running mdl to check markdown in README..."
+div "Running mdl to check markdown..."
 mdl README.md
 
 div "Running black..."
