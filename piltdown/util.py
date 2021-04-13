@@ -1,5 +1,5 @@
 """General shared utilities for Piltdown."""
-import literals
+import piltdown.literals as lit
 
 
 def to_monospace(string: str) -> str:
@@ -12,7 +12,7 @@ def to_monospace(string: str) -> str:
     """
     ret = ""
     for character in string:
-        ret += literals.MONOSPACE[character]
+        ret += lit.MONOSPACE[character]
     return ret
 
 
@@ -24,5 +24,5 @@ def bold(string: str) -> str:
     """
     ret = ""
     for character in string:
-        ret += literals.BOLD[character]
+        ret += lit.BOLD[character]
     return ret

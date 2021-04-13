@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 function div {
   echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||"
   echo "$1"
@@ -8,30 +7,31 @@ function div {
 div "Running shellcheck against this file..."
 shellcheck check.sh
 
+
 div "Running mdl to check markdown..."
 mdl README.md
 
 div "Running black..."
-black --line-length=79 ./*.py
+black --line-length=79 piltdown/*.py
 
 div "Running pylint..."
-pylint ./*.py
+pylint piltdown/*.py
 
 div "Running mypy..."
-mypy ./*.py
+mypy piltdown/*.py
 
 div "Running pyflakes..."
-pyflakes ./*py
+pyflakes piltdown/*py
 
 div "Running pycodestyle..."
-pycodestyle ./*.py
+pycodestyle piltdown/*.py
 
 div "Running pydocstyle..."
-pydocstyle ./*.py
+pydocstyle piltdown/*.py
 
 div "Running bandit..."
-bandit -s B101 ./*.py
+bandit -s B101 piltdown/*.py
 
 div "Running pytest..."
-python3 -m pytest ./*.py
+python3 -m pytest piltdown/*.py
 
