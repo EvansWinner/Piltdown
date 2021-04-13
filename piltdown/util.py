@@ -15,14 +15,14 @@ def to_monospace(string: str) -> str:
         ret += literals.MONOSPACE[character]
     return ret
 
+
 def bold(string: str) -> str:
-  """Produce a fake bold string from Unicode math characters.
+    """Produce a fake bold string from Unicode math characters.
 
-     Warning: Doesn't work with screen readers. Not really
-     advised.
-  """
-  ret=""
-  for character in string:
-    ret += literals.BOLD[character]
-  return ret
-
+    Warning: Doesn't work with screen readers. Not really
+    advised.
+    """
+    ret = ""
+    for character in string:
+        ret += literals.BOLD[character]
+    return ret

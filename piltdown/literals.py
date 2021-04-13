@@ -1,6 +1,14 @@
 """Global and shared variables for or potentially for any chart type."""
 EMPTY_BLOCK = "　"
 
+CHAR_KEYS = (
+    " "
+    + "0123456789"
+    + "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    + "abcdefghijklmnopqrstuvwxyz"
+    + ",.:;!?\"'`^~_&@#%+-*=<>()[]{}|/\\$"
+)
+
 MONOSPACE_CHARS = (
     EMPTY_BLOCK
     + "０１２３４５６７８９"
@@ -8,15 +16,10 @@ MONOSPACE_CHARS = (
     + "ａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚ"
     + "，．：；！？＂＇｀＾～＿＆＠＃％＋－＊＝＜＞（）［］｛｝￤／＼＄"
 )
-MONOSPACE_KEYS = (
-    " "
-    + "0123456789"
-    + "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    + "abcdefghijklmnopqrstuvwxyz"
-    + ",.:;!?\"'`^~_&@#%+-*=<>()[]{}|/\\$"
-)
-MONOSPACE = dict(zip(MONOSPACE_KEYS, MONOSPACE_CHARS))
+MONOSPACE = dict(zip(CHAR_KEYS, MONOSPACE_CHARS))
 
+BOLD_CHARS=""
+BOLD= dict(zip(CHAR_KEYS, BOLD_CHARS))
 
 # When not supplied with a list of labels, we use these
 LATIN_CHARS = "abcdefghijklmnopqrstuvwxyz"
@@ -24,7 +27,7 @@ GREEK_CHARS = "αβγδεζηθικλμνξοπρστυφχψω"
 DEFAULT_CHARS = (
     LATIN_CHARS.upper() + GREEK_CHARS.upper() + LATIN_CHARS + GREEK_CHARS
 )
-DEFAULT_LABELS= list(DEFAULT_CHARS)
+DEFAULT_LABELS = list(DEFAULT_CHARS)
 
 # Win/Loss Sparklines
 LOSS_CHAR = "▄"
@@ -60,9 +63,9 @@ ONEZIE_TWOZIES = {
 }
 
 # Dot charts
-HDOT_ONE="⚫"
-DOT_TWO="："
-DOT_ONE="．"
+HDOT_ONE = "⚫"
+DOT_TWO = "："
+DOT_ONE = "．"
 
 # Scaled up numbers
 DEFAULT3X5FONT = {

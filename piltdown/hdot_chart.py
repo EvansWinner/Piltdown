@@ -9,7 +9,9 @@ def hdot_chart_line(datum: int) -> str:
     return literals.HDOT_ONE * datum
 
 
-def hdot_chart(data: List[int], labels: List[str] = literals.DEFAULT_LABELS) -> str:
+def hdot_chart(
+    data: List[int], labels: List[str] = literals.DEFAULT_LABELS
+) -> str:
     """Given a list of integers, plot a horizontal dot plot.
 
     Optional second argument is a list of lables. They will be
@@ -23,6 +25,5 @@ def hdot_chart(data: List[int], labels: List[str] = literals.DEFAULT_LABELS) -> 
         raise ValueError(("You don't have enough labels"))
     lines = []
     for label, datum in zip(labels, data):
-        lines.append(util.to_monospace(label) + ":"+hdot_chart_line(datum))
+        lines.append(util.to_monospace(label) + ":" + hdot_chart_line(datum))
     return "\n".join(lines)
-

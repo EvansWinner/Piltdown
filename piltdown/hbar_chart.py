@@ -1,14 +1,14 @@
 """Horizontal bar charts for Piltdown."""
 import math
 from typing import Dict
-import literals
+import piltdown.literals as lit
 
 
 def hbar_line(
     length: float,
-    eighths: Dict[int, str] = literals.EIGHTHS,
-    eight_eighths: str = literals.EIGHT_EIGHTHS,
-    empty: str = literals.EMPTY_BLOCK,
+    eighths: Dict[int, str] = lit.EIGHTHS,
+    eight_eighths: str = lit.EIGHT_EIGHTHS,
+    empty: str = lit.EMPTY_BLOCK,
 ) -> str:
     """Generate a horizontal bar chart."""
     ret: str = ""
