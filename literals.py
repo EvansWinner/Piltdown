@@ -21,17 +21,17 @@ MONOSPACE = dict(zip(MONOSPACE_KEYS, MONOSPACE_CHARS))
 # When not supplied with a list of labels, we use these
 LATIN_CHARS = "abcdefghijklmnopqrstuvwxyz"
 GREEK_CHARS = "αβγδεζηθικλμνξοπρστυφχψω"
-DEFAULT_LABELS = (
-    LATIN_CHARS + GREEK_CHARS + LATIN_CHARS.upper() + GREEK_CHARS.upper()
+DEFAULT_CHARS = (
+    LATIN_CHARS.upper() + GREEK_CHARS.upper() + LATIN_CHARS + GREEK_CHARS
 )
-
+DEFAULT_LABELS= list(DEFAULT_CHARS)
 
 # Win/Loss Sparklines
 LOSS_CHAR = "▄"
 WIN_CHAR = "▀"
 ZERO_CHAR = "－"
 
-
+# Horizontal bar charts
 EIGHT_EIGHTHS = "█"
 EIGHTHS = {
     7: "▉",
@@ -44,6 +44,7 @@ EIGHTHS = {
 }
 
 
+# Tally charts
 TALLY_ONE = "𝍩"
 TALLY_TWO = "𝍪"
 TALLY_THREE = "𝍫"
@@ -58,6 +59,12 @@ ONEZIE_TWOZIES = {
     4: TALLY_FOUR,
 }
 
+# Dot charts
+HDOT_ONE="⚫"
+DOT_TWO="："
+DOT_ONE="．"
+
+# Scaled up numbers
 DEFAULT3X5FONT = {
     "%": [
         "█░▞",
