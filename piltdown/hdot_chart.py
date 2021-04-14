@@ -1,17 +1,15 @@
 """Create a horizontal dot chart."""
 from typing import List
-import literals
-import util
+import piltdown.literals as lit
+import piltdown.util as util
 
 
 def hdot_chart_line(datum: int) -> str:
     """Produce one line of a dot chart (without the label)."""
-    return literals.HDOT_ONE * datum
+    return lit.HDOT_ONE * datum
 
 
-def hdot_chart(
-    data: List[int], labels: List[str] = literals.DEFAULT_LABELS
-) -> str:
+def hdot_chart(data: List[int], labels: List[str] = lit.DEFAULT_LABELS) -> str:
     """Given a list of integers, plot a horizontal dot plot.
 
     Optional second argument is a list of lables. They will be

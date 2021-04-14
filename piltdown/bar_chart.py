@@ -1,6 +1,6 @@
 """Bar charts for Piltdown."""
 from typing import Dict
-import literals
+import piltdown.literals as lit
 
 
 def max_bar_width(data: Dict[str, float], width: int) -> int:
@@ -19,7 +19,7 @@ def bar_chart(
     data: Dict[str, float],
     width: int,
     line_breaks: bool = False,
-    key_labels: str = literals.DEFAULT_LABELS,
+    key_labels: str = lit.DEFAULT_LABELS,
 ) -> str:
     """Create a bar chart.
 
