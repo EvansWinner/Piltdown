@@ -68,8 +68,7 @@ ONEZIE_TWOZIES: Dict[int, str] = {
 
 # Dot charts
 HDOT_ONE: str = "⚫"
-DOT_TWO: str = "："
-DOT_ONE: str = "．"
+DOT_ONE: str = "＊"
 
 # Scaled up numbers
 DEFAULT3X5FONT: Dict[str, List[str]] = {
