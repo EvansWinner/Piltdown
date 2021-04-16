@@ -27,5 +27,7 @@ def dot_chart(data: List[int], labels: List[str] = lit.DEFAULT_LABELS) -> str:
 
 
 # for line in dot_chart([2,0,2,23,5,4,3,4,2]):print(line)
-print("Number of episodes of Animaniacs my son watched this week:"+
-       dot_chart([2, 0, 2, 8, 5, 4, 3],['M','T','W','R','F','S','U']))
+print(
+    "Number of episodes of Animaniacs my son watched this week:"
+    + dot_chart([2, 0, 2, 8, 5, 4, 3], ["M", "T", "W", "R", "F", "S", "U"])
+)

@@ -8,8 +8,8 @@ div "Running shellcheck against this file..."
 shellcheck check.sh
 
 
-div "Running mdl to check markdown..."
-mdl README.md
+# div "Running mdl to check markdown..."
+# mdl README.md
 
 div "Running black..."
 black --line-length=79 piltdown/*.py
@@ -32,6 +32,6 @@ pydocstyle piltdown/*.py
 div "Running bandit..."
 bandit -s B101 piltdown/*.py
 
-div "Running pytest..."
-python3 -m pytest piltdown/*.py
+# div "Running pytest..."
+# python3 -m pytest piltdown/*.py
 

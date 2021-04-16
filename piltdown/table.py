@@ -21,11 +21,11 @@ def table(data: List[List[str]]) -> str:
     # Get maximum length for each column
     lengths = [list(map(len, row)) for row in data]
     maxes = list(map(max, lengths[::-1]))
-    maxes[-1]=maxes[-1]-1 # No extra border padding for last column
+    maxes[-1] = maxes[-1] - 1  # No extra border padding for last column
     # Add spaces to pad cells
     for i, item in enumerate(data):
         for j, jtem in enumerate(data[i]):
-            data[i][j] = jtem + (maxes[j] - len(jtem)+1) * " "
+            data[i][j] = jtem + (maxes[j] - len(jtem) + 1) * " "
     # Convert to monospace
     mono = [list(map(util.to_monospace, row)) for row in data]
     # Convert to a single string with newlines
@@ -33,5 +33,3 @@ def table(data: List[List[str]]) -> str:
     for i in mono:
         ret += "".join(i) + "\n"
     return ret
-
-
