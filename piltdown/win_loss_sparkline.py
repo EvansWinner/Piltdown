@@ -1,16 +1,16 @@
 """Win/Loss sparkline for Piltdown."""
 
 from typing import List
-import literals
+import piltdown.literals as lit
 
 
 def win_loss_one(number: float) -> str:
     """Return appropriate win/loss character for a single scaler."""
     if number == 0:
-        return literals.ZERO_CHAR
+        return lit.ZERO_CHAR
     if number < 0:
-        return literals.LOSS_CHAR
-    return literals.WIN_CHAR
+        return lit.LOSS_CHAR
+    return lit.WIN_CHAR
 
 
 def win_loss_sparkline(values: List[float]) -> str:

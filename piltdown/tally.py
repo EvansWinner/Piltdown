@@ -17,7 +17,7 @@ def tally(data: Dict[str, int]):
         fives = value // 5
         ret += (
             label
-            + util.to_monospace(":")
+            + util.to_monospace("|")
             + ((lit.TALLY_FIVE + lit.EMPTY_BLOCK) * fives)
         )
         ret += lit.ONEZIE_TWOZIES[value - fives * 5] + "\n"
