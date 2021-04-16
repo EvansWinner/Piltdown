@@ -74,11 +74,70 @@ Anyway, if you do the pip thing, then import things as you need them as per the 
 
 In alphabetical order:
 
+ - Dot Charts
  - Horizontal Dot Charts
  - Scaled-Up Numbers
  - Tables
  - Tally Charts
  - Win/Loss Sparklines
+
+### Dot Charts
+
+#### Example
+
+Note that the number of characters used is Width x max height, because it has to be padded with whitespace characters. The one below, for example, is 10 high, plus one more for the label, which means 11 times 7 = 77 characters.
+
+
+```python
+import piltdown.dot_chart as dc
+
+# Data seems about right.
+print("Number of Episodes of Animaniacs My Son Watched This Week\n" +
+      dc.dot_chart([3, 2, 5, 0, 9, 4, 7],
+                  ["M", "T", "W", "R", "F", "S", "U"]))
+```
+
+    Number of Episodes of Animaniacs My Son Watched This Week
+    
+    　　　　＊　　
+    　　　　＊　　
+    　　　　＊　＊
+    　　　　＊　＊
+    　　＊　＊　＊
+    　　＊　＊＊＊
+    ＊　＊　＊＊＊
+    ＊＊＊　＊＊＊
+    ＊＊＊　＊＊＊
+    ＭＴＷＲＦＳＵ
+    
+
+
+#### Example
+
+You can also use literals.DEFAULT_LABELS for labels and then include a key --
+
+
+```python
+import piltdown.dot_chart as dc
+import piltdown.literals as lit
+
+# Now I'm just being mean.
+print("Who Knocked On My Door Today?" +
+      dc.dot_chart([3, 4, 1],
+      lit.DEFAULT_LABELS) +
+      "\nA = Jehova's Witnesses; B = Mormons; C = Avon Lady"
+     )
+```
+
+    Who Knocked On My Door Today?
+    　＊　
+    ＊＊　
+    ＊＊　
+    ＊＊＊
+    ＡＢＣ
+    
+    A = Jehova's Witnesses; B = Mormons; C = Avon Lady
+
 
 ### Horizontal Dot Chart
 
@@ -149,6 +208,8 @@ print(sun.scaled_up_number("42", leading_pad=10) +
 
 With this one, the number takes up 155 characters.
 
+**NOTE** however, that on a cell phone I don't think you can count on lines of more than about 20 characters, so this would actually try to wrap, I believe. Maybe I should try it on Twitter and see.
+
 
 ```python
 import piltdown.scaled_up_number as sun
@@ -207,7 +268,7 @@ Another one they use to teach "data literacy" to kids, mostly, I think.
 
 #### Example
 
-Not super pretty, as the tally characters have slightly slanted lines. There might be a better way to do the onesie-twosie characters.
+Not super pretty, as the tally characters have slightly slanted lines. There might be a better way to do the onesie-twosie characters. Also, they don't seem to work in whatever font Github uses for this README.
 
 Note that you want your labels to be all the same length. If that's not conventient, I recommend using A, B, C, etc. or something similar, and then including a key below your chart.
 
