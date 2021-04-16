@@ -74,7 +74,8 @@ Anyway, if you do the pip thing, then import things as you need them as per the 
 
 In alphabetical order:
 
- - Horizontal Dot Chart
+ - Horizontal Dot Charts
+ - Tables
 
 ### Horizontal Dot Chart
 
@@ -83,7 +84,7 @@ This is the kind of thing they use on Khan Acadamy
 to teach small children about data.
 This is the horizontal version.
 
-### Example
+#### Example
 
 Note Labels are automatically converted to the Unicode manthimatical "fullwidth" characters, which do not play nicely with screen readers. Beware the righteous wrath of the screen reader user.
 
@@ -102,13 +103,47 @@ print(
 
     How many times I ate chocolate this week:
     
-    Ｍｏ:⚫⚫⚫
-    Ｔｕ:⚫⚫
-    Ｗｅ:⚫⚫⚫⚫
-    Ｔｈ:
-    Ｆｒ:⚫⚫
-    Ｓａ:⚫
-    Ｓｕ:⚫⚫⚫⚫
+    Ｍｏ|⚫⚫⚫
+    Ｔｕ|⚫⚫
+    Ｗｅ|⚫⚫⚫⚫
+    Ｔｈ|
+    Ｆｒ|⚫⚫
+    Ｓａ|⚫
+    Ｓｕ|⚫⚫⚫⚫
+
+
+### Table
+
+Very small tables can be done using the util.to_monospace trick. Little two-way contingency tables might be done, for example.
+
+#### Example
+
+Note that you can use strings or floats/ints and they will converted to strings automatically.
+
+Also note that an empty string will be interpreted as an empty cell.
+
+At the moment that's all there is. No fancy cell/row/column borders or anything else.
+
+
+```python
+import piltdown.table as tbl
+
+# Data cleverly cribed from the Wikipedia entry for "Contingency Table."
+print("Handedness (L or R) vs. Sex (M or F) Contingency Table\n" +
+    tbl.table([["", "R","L","Tot"],
+               ["M",43,9,52],
+               ["F",44,4,48],
+               ["Tot",87,13,100]]
+              )
+)
+```
+
+    Handedness (L or R) vs. Sex (M or F) Contingency Table
+    　　　　Ｒ　　Ｌ　　Ｔｏｔ
+    Ｍ　　　４３　９　　５２　
+    Ｆ　　　４４　４　　４８　
+    Ｔｏｔ　８７　１３　１００
+    
 
 
 ## Hacking

@@ -16,6 +16,8 @@ def table(data: List[List[str]]) -> str:
     The width of each column will be the maximum width
     of any entry of in that column.
     """
+    # Let's be nice and convert any numbers to strings
+    data = [list(map(str, row)) for row in data]
     # Get maximum length for each column
     lengths = [list(map(len, row)) for row in data]
     maxes = list(map(max, lengths[::-1]))
@@ -23,9 +25,7 @@ def table(data: List[List[str]]) -> str:
     # Add spaces to pad cells
     for i, item in enumerate(data):
         for j, jtem in enumerate(data[i]):
-            print(j,jtem)
-            data[i][j] = jtem + (maxes[i] - len(jtem)+1) * " "
-    print(data)
+            data[i][j] = jtem + (maxes[j] - len(jtem)+1) * " "
     # Convert to monospace
     mono = [list(map(util.to_monospace, row)) for row in data]
     # Convert to a single string with newlines
@@ -35,4 +35,3 @@ def table(data: List[List[str]]) -> str:
     return ret
 
 
-print(table([["", "Cats", "Dogs"], ["Legs", "4", "4"], ["Nice?", "No", "Yes"]]))
