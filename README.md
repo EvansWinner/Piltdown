@@ -6,10 +6,19 @@
 
 **YE OLDE TABLE OF CONTENTS**
 
-1. **Introduction** *Wherein is answered the question of what it is and what it's for*
-3. **Installation** *Wherein is answered the question of how to make it go*
-2. **Documentation by Examples** *Wherein is answered the question of how to use it*
-4. **Hacking** *Wherein is -- oh, this is getting boring*
+- [Introduction](#introduction) *Wherein is answered the question of what it is and what it's for*
+    - [The Basic Idea](#the-basic-idea)
+- [Installation](#installation) *Wherein is answered the question of how to get it*
+- [Documentation by Examples]() *Wherein is answered the question of how to make it go go go!*
+    - [Plots](#ye-olde-plots)
+        - [Dot Charts](#dot-charts)
+    - [Utilities](#utilities)
+        - [cut_above()](#cut_above) -- Add a "cut above this line" line to the output
+        - [cut_below()](#cut_below) -- Add a "cut below this line" line to the output
+        - [to_monospace()](#to_monospace) -- Write text in Unicode fake monospace (used internally for labels too)
+        - [with_cut_lines()](#with_cut_lines) -- Wrap output in cut_below() and cut_above()
+- [Hacking](#hacking) *Wherein is -- oh, this is getting boring*
+    - [Todo](#todo)
 
 ## Introduction
 
@@ -70,20 +79,14 @@ Or you can just, like, load up the files any old way you want. It's pretty simpl
 Anyway, if you do the pip thing, then import things as you need them as per the examples in, you guessed it, the Documentation section below.
 
 
-## Documentation by Example, or Ye Olde Plots
+## Documentation by Example
 
+### Ye Olde Plots
 In alphabetical order:
 
- - Dot Charts
- - Horizontal Dot Charts
- - Scaled-Up Numbers
- - Tables
- - Tally Charts
- - Win/Loss Sparklines
+#### Dot Charts
 
-### Dot Charts
-
-#### Example
+##### Example
 
 Note that the number of characters used is Width x max height, because it has to be padded with whitespace characters. The one below, for example, is 10 high, plus one more for the label, which means 11 times 7 = 77 characters.
 
@@ -112,7 +115,7 @@ print("Number of Episodes of Animaniacs My Son Watched This Week\n" +
     
 
 
-#### Example
+##### Example
 
 You can also use literals.DEFAULT_LABELS for labels and then include a key --
 
@@ -139,14 +142,14 @@ print("Who Knocked On My Door Today?" +
     A = Jehova's Witnesses; B = Mormons; C = Avon Lady
 
 
-### Horizontal Dot Chart
+#### Horizontal Dot Chart
 
 Not to be confused with a dot plot.
 This is the kind of thing they use on Khan Acadamy
 to teach small children about data.
 This is the horizontal version.
 
-#### Example
+##### Example
 
 Note Labels are automatically converted to the Unicode manthimatical "fullwidth" characters, which do not play nicely with screen readers. Beware the righteous wrath of the screen reader user.
 
@@ -175,10 +178,10 @@ print(
     Ｓｕ|⚫⚫⚫⚫
 
 
-### Scaled-Up Number
+#### Scaled-Up Number
 Just like Mom used to make.
 
-#### Example
+##### Example
 
 Se literals.py for the font definitions. By all means, send me a PR with a better version, or additional fonts.
 
@@ -204,7 +207,7 @@ print(sun.scaled_up_number("42", leading_pad=10) +
     Meaning of life, the Universe, and everything.
 
 
-#### Example
+##### Example
 
 With this one, the number takes up 155 characters.
 
@@ -228,11 +231,11 @@ print(sun.scaled_up_number("1,235.7%", leading_pad=0) +
     Your Mom's age compared to mine, as a very precise percentage.
 
 
-### Table
+#### Table
 
 Very small tables can be done using the util.to_monospace trick. Little two-way contingency tables might be done, for example.
 
-#### Example
+##### Example
 
 Note that you can use strings or floats/ints and they will converted to strings automatically.
 
@@ -262,11 +265,11 @@ print("Handedness (L or R) vs. Sex (M or F) Contingency Table\n" +
     
 
 
-### Tally Chart
+#### Tally Chart
 
 Another one they use to teach "data literacy" to kids, mostly, I think.
 
-#### Example
+##### Example
 
 Not super pretty, as the tally characters have slightly slanted lines. There might be a better way to do the onesie-twosie characters. Also, they don't seem to work in whatever font Github uses for this README.
 
@@ -284,21 +287,21 @@ print("How Many Chocolate Bars My Family Ate This Week\n\n" +
 
     How Many Chocolate Bars My Family Ate This Week
     
-    Ｍｏ：ᚎ　
-    Ｔｕ：ᚎ　ᚎ　𝍩
-    Ｗｅ：𝍫
-    Ｔｈ：
-    Ｆｒ：ᚎ　ᚎ　ᚎ　𝍫
-    Ｓａ：ᚎ　ᚎ　ᚎ　ᚎ　ᚎ　𝍩
-    Ｓｕ：ᚎ　ᚎ　ᚎ　𝍪
+    Ｍｏ￤ᚎ　
+    Ｔｕ￤ᚎ　ᚎ　𝍩
+    Ｗｅ￤𝍫
+    Ｔｈ￤
+    Ｆｒ￤ᚎ　ᚎ　ᚎ　𝍫
+    Ｓａ￤ᚎ　ᚎ　ᚎ　ᚎ　ᚎ　𝍩
+    Ｓｕ￤ᚎ　ᚎ　ᚎ　𝍪
     
 
 
-### Win/Loss Sparkline
+#### Win/Loss Sparkline
 
 Tastes as good as it sounds!
 
-#### Example
+##### Example
 
 Note that you are basically just plotting signum of whatever numbers you give. 
 
@@ -317,6 +320,10 @@ print("My sleep time for the last 7 days, greater than or less than 8 hours: " +
 
     My sleep time for the last 7 days, greater than or less than 8 hours: ▀▄▄▀－▀ rounded to nearest half hour.
 
+
+### Utilities
+
+Various little helpers which you may variously find helpful.
 
 ## Hacking
 
@@ -343,6 +350,7 @@ The README is generated from this Jupyter notebook. Don't forget to re-export it
 #### TODO
 
 - Well, yeah, maybe I do want to do bold and italic fonts as a utility function. Also maybe some variables bound to generally useful Unicode characters (smileys, Harvey balls, etc)
+- A simple `count_chars()` utility to verify the whole thing is <= 280 chars.
 
 A list of plots I got somewhere that looked at a quick glance like they might be possible. Not to be interpreted as firm intentions:
 
@@ -350,7 +358,7 @@ A list of plots I got somewhere that looked at a quick glance like they might be
 - heatmap
 - stacked bar
 - boxplot
-- column sparkline
+- column sparkline -- Wll duh. The one that started it all.
 - win/loss sparkline
 - treemap
 - matrix diagram

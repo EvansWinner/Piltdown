@@ -26,3 +26,19 @@ def bold(string: str) -> str:
     for character in string:
         ret += lit.BOLD[character]
     return ret
+
+
+def cut_above() -> str:
+    """Return a "cut before this line" line."""
+    return "\n`--Cut before this line--'\n"
+
+
+def cut_below() -> str:
+    """Return a "cut after this line" line."""
+    return "\n.--Cut after this line --.\n" 
+
+
+def with_cut_lines(string:str)->str:
+    """Wrap a string in cut lines."""
+    return cut_below() + string + cut_above()
+
