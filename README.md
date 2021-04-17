@@ -93,7 +93,7 @@ Anyway, if you do the pip thing, then import things as you need them as per the 
 In alphabetical order:
 
 #### Comparison Charts
-Comparison charts are, at least minimally, just tables with checkmarks and X's in the cells. See [Tables](#tables). There is no Unicode fullwidth checkmark, so you need to use something else that is basically something in the ASCII subset that is represented by the Unicode fullwidth set.
+Comparison charts are, at least minimally, just tables with checkmarks and X's in the cells. See [Tables](#tables). There is no Unicode fullwidth checkmark, so you need to use something else that is basically something in the ASCII subset that is represented by the Unicode fullwidth set. X's and O's or T's (for True) and F's (for False) are probably the best bets.
 
 The same caveat applies. You probably want to use single letter column and row headers, and should at least use all row headers of the same length, and then include a key below.
 
@@ -434,36 +434,31 @@ The README is generated from this Jupyter notebook. Don't forget to re-export it
 - Well, yeah, maybe I do want to do bold and italic fonts as a utility function. Also maybe some variables bound to generally useful Unicode characters (smileys, Harvey balls, etc)
 - A simple `count_chars()` utility to verify the whole thing is ≤ 280 chars.
 
-A list of plots I got somewhere that looked at a quick glance like they might be possible. Not to be interpreted as firm intentions:
+A list of plots I got somewhere that looked at a quick glance like they might be possible. Not to be interpreted as firm intentions. More or less in descending order of priority.
 
 - column sparkline -- Well duh. The one that started it all.
 - bullet diagram
-- comparison chart
 - stem and leaf 
 - waffle chart
-- horiz bar chart
+- horiz barchart
 - heatmap
 - boxplot
 - stacked bar
-- horiz hist
-
-- treemap
-- matrix diagram
-- pictorial fraction
-- funnel
-- linear process diag
-- grouped bar
-- nested/layered proportional area
+- grouped barchart
+- lollypop chart
 - pictorial unit -- basically allow custom characters for the dot chart, one per line
-- pyramid diag
+
+Maybe look at later.
+- treemap
+- funnel
+- linear process diagram
+- nested/layered proportional area 
+- pyramid diagram
 - dumbell plot
 - partition layer chart icicle diag
 - stepped line graph
-- lollypop chart
-
 - kagi chart
 - dot matix
-- pictogram
 
 
 
