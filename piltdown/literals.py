@@ -50,6 +50,19 @@ EIGHTHS: Dict[int, str] = {
     1: "▏",
 }
 
+# Column sparklines
+V8THS = {
+    0: EMPTY_BLOCK,
+    1: "▁",
+    2: "▂",
+    3: "▃",
+    4: "▄",
+    5: "▅",
+    6: "▆",
+    7: "▇",
+    8: "█"
+}
+
 
 # Tally charts
 TALLY_ONE: str = "𝍩"
