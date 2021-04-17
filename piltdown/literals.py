@@ -63,6 +63,10 @@ V8THS = {
     8: "█"
 }
 
+# Xs and checks
+X="✗"
+CHECK="✓"
+
 
 # Tally charts
 TALLY_ONE: str = "𝍩"

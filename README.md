@@ -11,6 +11,7 @@
 - [Installation](#installation) *Wherein is answered the question of how to get it*
 - [Documentation by Example](#documentation-by-example) *Wherein is answered the question of how to make it go go go!*
     - [Plots](#ye-olde-plots)
+        - [Comparison Charts](#comparison-charts)
         - [Dot Charts](#dot-charts)
         - [Horizontal Dot Charts](#horizontal-dot-charts)
         - [Scaled-Up Numbers](#scaled-up-numbers)
@@ -90,6 +91,40 @@ Anyway, if you do the pip thing, then import things as you need them as per the 
 
 ### Ye Olde Plots
 In alphabetical order:
+
+#### Comparison Charts
+Comparison charts are, at least minimally, just tables with checkmarks and X's in the cells. See [Tables](#tables). There is no Unicode fullwidth checkmark, so you need to use something else that is basically something in the ASCII subset that is represented by the Unicode fullwidth set.
+
+The same caveat applies. You probably want to use single letter column and row headers, and should at least use all row headers of the same length, and then include a key below.
+
+##### Example
+
+
+```python
+import piltdown.table as tbl
+import piltdown.literals as lit
+
+# Data based on, well duh, obviously.
+print("\n" +
+    tbl.table([["",         "Com", "Ver", "Awe"],
+               ["Mplib",    "T",   "T",   "F"],
+               ["Ggplot2",  "T",   "T",   "F"],
+               ["Piltdown", "F",   "F",   "T"]]
+              ) +
+                "\nMplib = Matplotlib\n" +
+                "Com = Comprehensive; Ver = Well-verified; Awe = Awesome"
+)
+```
+
+    
+    　　　　　　　　　Ｃｏｍ　Ｖｅｒ　Ａｗｅ
+    Ｍｐｌｉｂ　　　　Ｔ　　　Ｔ　　　Ｆ　　
+    Ｇｇｐｌｏｔ２　　Ｔ　　　Ｔ　　　Ｆ　　
+    Ｐｉｌｔｄｏｗｎ　Ｆ　　　Ｆ　　　Ｔ　　
+    
+    Mplib = Matplotlib
+    Com = Comprehensive; Ver = Well-verified; Awe = Awesome
+
 
 #### Dot Charts
 
@@ -401,34 +436,35 @@ The README is generated from this Jupyter notebook. Don't forget to re-export it
 
 A list of plots I got somewhere that looked at a quick glance like they might be possible. Not to be interpreted as firm intentions:
 
-- horiz bar
-- heatmap
-- stacked bar
-- boxplot
 - column sparkline -- Well duh. The one that started it all.
+- bullet diagram
+- comparison chart
+- stem and leaf 
+- waffle chart
+- horiz bar chart
+- heatmap
+- boxplot
+- stacked bar
+- horiz hist
+
 - treemap
 - matrix diagram
 - pictorial fraction
-- horiz hist
-- waffle
 - funnel
 - linear process diag
 - grouped bar
 - nested/layered proportional area
 - pictorial unit -- basically allow custom characters for the dot chart, one per line
-- dot plot
 - pyramid diag
 - dumbell plot
-- bullet diag
 - partition layer chart icicle diag
 - stepped line graph
-- scaled up number
 - lollypop chart
-- comparison chart
+
 - kagi chart
 - dot matix
 - pictogram
-- stem and leaf 
+
 
 
 

@@ -19,8 +19,8 @@ def table(data: List[List[str]]) -> str:
     # Let's be nice and convert any numbers to strings
     data = [list(map(str, row)) for row in data]
     # Get maximum length for each column
-    lengths = [list(map(len, row)) for row in data]
-    maxes = list(map(max, lengths[::-1]))
+    lengths = [list(map(len, row)) for row in zip(*reversed(data))]
+    maxes = list(map(max, lengths))
     maxes[-1] = maxes[-1] - 1  # No extra border padding for last column
     # Add spaces to pad cells
     for i, item in enumerate(data):
