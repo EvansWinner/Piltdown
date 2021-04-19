@@ -50,6 +50,9 @@ EIGHTHS: Dict[int, str] = {
     1: "▏",
 }
 
+# Waffle charts
+WAFFLES="▩□▥■▦▨▣▤▧"
+
 # Column sparklines
 V8THS = {
     0: EMPTY_BLOCK,
