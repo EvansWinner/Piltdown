@@ -7,6 +7,7 @@
 **YE OLDE TABLE OF CONTENTS**
 
 - [Introduction](#introduction) *Wherein is answered the question of what it is and what it's for*
+    - [Caveats](#caveats)
     - [The Basic Idea](#the-basic-idea)
 - [Installation](#installation) *Wherein is answered the question of how to get it*
 - [Documentation by Example](#documentation-by-example) *Wherein is answered the question of how to make it go go go!*
@@ -17,6 +18,7 @@
         - [Scaled-Up Numbers](#scaled-up-numbers)
         - [Tables](#tables)
         - [Tally Charts](#tally-charts)
+        - [Waffle Charts](#waffle-charts)
         - [Win/Loss Sparklines](#win-loss-sparklines)
     - [Utilities](#utilities)
         - [cut_above()](#cut_above) -- Add a "cut above this line" line to the output
@@ -32,23 +34,26 @@
 
 *or, What is it? and what's it for?*
 
-Piltdown is a tiny, nay, even trivial Python library
+**Piltdown is a tiny, nay, even trivial Python library
 that generates Unicode strings of bar charts
 and some other data visualization thingies
-which are meant to be included in your Twitter posts.
+which are meant to be included in your Twitter posts.**
 
 See the Documentation section below for examples.
 
 What kind of charts, you ask? Also see the Documentation section for examples.
 
-But see all the caveats.
+But see all the --
+
+
+
+### Caveats
+
 I mean, they're pretty obvious.
-There is only so much you can do with nothing but text
-that is always left-justified,
-displayed in a very narrow column,
-and in a variable-width font--
-even with Unicode.
-If you think you can pull off a scatter plot with variable width Unicode in the space of a tweet, by all means, send me a PR.
+
+1. There is only so much you can do with nothing but text that is always left-justified, displayed in a very narrow column, and in a variable-width font--even with Unicode. If you think you can pull off a scatter plot with variable width Unicode in the space of a tweet, by all means, send me a PR.
+
+2. Screen readers. I don't know how many times I mention it below, but Unicode hacks are inherently unfriendly to the blind. Beware.
 
 I wrote this for the fun of it,
 on a lark. Don't get all testy with me.
@@ -74,13 +79,13 @@ and thus becometh Robert your parent's brother.
 
 ## Installation
 
-Clone the repository and do 
+Clone the repository, `cd` to your new `piltdown` directory, and then do --
 
     pip install .
     
 or the local equivalent (eg. `pip3 install .` )
 
-Or at some point maybe I will make it installable from PyPi or whatever it is.
+Or at some point maybe I will make it installable from PyPi or whatever it's called.
 
 Or you can just, like, load up the files any old way you want. It's pretty simple.
 
@@ -95,7 +100,7 @@ In alphabetical order:
 #### Comparison Charts
 Comparison charts are, at least minimally, just tables with checkmarks and X's in the cells. See [Tables](#tables). There is no Unicode fullwidth checkmark, so you need to use something else that is basically something in the ASCII subset that is represented by the Unicode fullwidth set. X's and O's or T's (for True) and F's (for False) are probably the best bets.
 
-The same caveat applies. You probably want to use single letter column and row headers, and should at least use all row headers of the same length, and then include a key below.
+The same caveat applies. Column and row headers are best kept very short.
 
 ##### Example
 
@@ -362,6 +367,39 @@ print("My sleep time for the last 7 days, greater than or less than 8 hours: " +
 ```
 
     My sleep time for the last 7 days, greater than or less than 8 hours: ▀▄▄▀－▀ rounded to nearest half hour.
+
+
+#### Waffle Charts
+
+Just at the moment you can select your own glyphs (or use the defaults, `literals.WAFFLES`) and that's about it. Waffles fill from top to bottom, left to right, just like European reading order. I intend to write something that will let you fill from top to bottom, then left to right (like... er, ancient Egyption reading order? -- how do I know?) Anyway, writing the routine that rotates ragged two-dimensional lists is, you know, a job for a real programmer.
+
+Also, at the moment some glyphs aren't the same size as others in some fonts, so a little testing on Twitter might be called for.
+
+##### Example
+
+
+```python
+import piltdown.waffle as wfl
+
+print("Pets Owned by Aliens by %\n" + 
+      wfl.waffle([10, 75, 15], ["Babel Fish", "Tribble", "Wookie"])
+     )
+```
+
+    Pets Owned by Aliens by %
+    ▩▩▩▩▩▩▩▩▩▩
+    ▥▥▥▥▥▥▥▥▥▥
+    ▥▥▥▥▥▥▥▥▥▥
+    ▥▥▥▥▥▥▥▥▥▥
+    ▥▥▥▥▥▥▥▥▥▥
+    ▥▥▥▥▥▥▥▥▥▥
+    ▥▥▥▥▥▥▥▥▥▥
+    ▥▥▥▥▥▥▥▥▥▥
+    ▦▦▦▦▦▥▥▥▥▥
+    ▦▦▦▦▦▦▦▦▦▦
+    
+    ▩ = Babel Fish; ▥ = Tribble; ▦ = Wookie
+    
 
 
 ### Utilities
