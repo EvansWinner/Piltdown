@@ -69,5 +69,3 @@ def waffle(
     ret+=key
     return ret
 
-
-print(waffle([2, 3, 5, 7, 9, 11], ["A", "B", "C", "D", "E", "F"]))
