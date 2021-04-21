@@ -4,6 +4,10 @@ import math
 import piltdown.literals as lit
 
 
+#def rotate(list):
+#    for i in len(list)-1:
+         
+
 def waffle(
     data: List[int],
     categories: List[str],
@@ -19,10 +23,7 @@ def waffle(
     Categories should be a list of strings for the key. Layout is
     a tuple of two integers: preffered (width,height). Zero mean
     calculate based on the other value. Two zeros (the default)
-    means try to get as close to a square as possible. ltor
-    (default True) means fill in glyphs staeting top-left and going
-    left to right,then down rows. False means start at the same
-    place but fill down to the bottom abd then by column.
+    means try to get as close to a square as possible.
     """
     if len(data) != len(categories): raise ValueError("Data/categories length mismatch")
     if len(data) > len(glyphs):
@@ -51,9 +52,8 @@ def waffle(
     for i in range(0, len(listed), 2):
         listed[i].reverse()
     # Rotate the block if the user asked for that.
-    if ltor == False:
-        listed = list(map(list, zip(*reversed(listed))))
-    # Convert back to a string with a newline at the end of each
+    #if ltor == False:
+    #    listed=rotate(listed)
     # sublist
     for i in listed:i.append("\n")
     ret = ""
@@ -70,4 +70,4 @@ def waffle(
     return ret
 
 
-print(waffle([2, 3, 5, 7, 9, 11], ["A", "B", "C", "D", "E", "F"],ltor=False))
+print(waffle([2, 3, 5, 7, 9, 11], ["A", "B", "C", "D", "E", "F"]))
