@@ -51,7 +51,7 @@ EIGHTHS: Dict[int, str] = {
 }
 
 # Waffle charts
-WAFFLES="▩▥▦▨▣▤▧"
+WAFFLES = "▩▥▦▨▣▤▧"
 
 # Column sparklines
 V8THS = {
@@ -63,12 +63,12 @@ V8THS = {
     5: "▅",
     6: "▆",
     7: "▇",
-    8: "█"
+    8: "█",
 }
 
 # Xs and checks
-X="✗"
-CHECK="✓"
+X = "✗"
+CHECK = "✓"
 
 
 # Tally charts

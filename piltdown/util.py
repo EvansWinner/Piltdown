@@ -35,18 +35,18 @@ def cut_above() -> str:
 
 def cut_below() -> str:
     """Return a "cut after this line" line."""
-    return "\n.--Cut after this line --.\n" 
+    return "\n.--Cut after this line --.\n"
 
 
-def with_cut_lines(string:str)->str:
+def with_cut_lines(string: str) -> str:
     """Wrap a string in cut lines."""
     return cut_below() + string + cut_above()
 
 
-def with_char_count(string:str)->str:
+def with_char_count(string: str) -> str:
     """Return whatever string is passed.
-   
-       Unless that string is longer than 280 characters."""
+
+    Unless that string is longer than 280 characters."""
     if len(string) <= 280:
         return string
     else:

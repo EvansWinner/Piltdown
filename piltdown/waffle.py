@@ -4,9 +4,9 @@ import math
 import piltdown.literals as lit
 
 
-#def rotate(list):
+# def rotate(list):
 #    for i in len(list)-1:
-         
+
 
 def waffle(
     data: List[int],
@@ -25,7 +25,8 @@ def waffle(
     calculate based on the other value. Two zeros (the default)
     means try to get as close to a square as possible.
     """
-    if len(data) != len(categories): raise ValueError("Data/categories length mismatch")
+    if len(data) != len(categories):
+        raise ValueError("Data/categories length mismatch")
     if len(data) > len(glyphs):
         raise ValueError("Not enough glyphs")
     if layout == [0, 0]:
@@ -52,20 +53,21 @@ def waffle(
     for i in range(0, len(listed), 2):
         listed[i].reverse()
     # Rotate the block if the user asked for that.
-    #if ltor == False:
+    # if ltor == False:
     #    listed=rotate(listed)
     # sublist
-    for i in listed:i.append("\n")
+    for i in listed:
+        i.append("\n")
     ret = ""
     for i in listed:
         for j in i:
-            ret+=j
+            ret += j
     # Add key underneath
-    key="\n"
+    key = "\n"
     for i, cat in enumerate(categories):
-        key+=glyphs[i] + " = " + cat
-        if i !=len(categories)-1:key+="; "
-    key+="\n"
-    ret+=key
+        key += glyphs[i] + " = " + cat
+        if i != len(categories) - 1:
+            key += "; "
+    key += "\n"
+    ret += key
     return ret
-
