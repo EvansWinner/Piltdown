@@ -12,6 +12,7 @@
 - [Installation](#installation) *Wherein is answered the question of how to get it*
 - [Documentation by Example](#documentation-by-example) *Wherein is answered the question of how to make it go go go!*
     - [Plots](#ye-olde-plots)
+        - [Column Sparklines](#column-sparklines)
         - [Comparison Charts](#comparison-charts)
         - [Dot Charts](#dot-charts)
         - [Horizontal Dot Charts](#horizontal-dot-charts)
@@ -96,6 +97,26 @@ Anyway, if you do the pip thing, then import things as you need them as per the 
 
 ### Ye Olde Plots
 In alphabetical order:
+
+#### Column Sparklines
+
+The Twitter plot that started it all! Or at least, that I noticed had already been done and inspired the rest of this. 
+
+##### Example
+
+Note that there are only 8 levels available, and all your numbers will be scaled based on your highest value. This isn't high-precision stuff here.
+
+
+```python
+import piltdown.column_sparkline as cspar
+
+print("Daily how much I like Twitter the last 10 days " +
+     cspar.column_sparkline([2,4,8,10,0,3,4,5,1,4]) +
+     " on a scale of 1 to 10... so don't get your hopes up about another post.")
+```
+
+    Daily how much I like Twitter the last 10 days ▂▄▇█　▃▄▄▁▄ on a scale of 1 to 10... so don't get your hopes up about another post.
+
 
 #### Comparison Charts
 Comparison charts are, at least minimally, just tables with checkmarks and X's in the cells. See [Tables](#tables). There is no Unicode fullwidth checkmark, so you need to use something else that is basically something in the ASCII subset that is represented by the Unicode fullwidth set. X's and O's or T's (for True) and F's (for False) are probably the best bets.
@@ -474,10 +495,8 @@ The README is generated from this Jupyter notebook. Don't forget to re-export it
 
 A list of plots I got somewhere that looked at a quick glance like they might be possible. Not to be interpreted as firm intentions. More or less in descending order of priority.
 
-- column sparkline -- Well duh. The one that started it all.
 - bullet diagram
 - stem and leaf 
-- waffle chart
 - horiz barchart
 - heatmap
 - boxplot
