@@ -110,12 +110,14 @@ Note that there are only 8 levels available, and all your numbers will be scaled
 ```python
 import piltdown.column_sparkline as cspar
 
-print("Daily how much I like Twitter the last 10 days " +
+# Data channeled by me from the spirit of an ancient cat.
+print("Daily how much I like Twitter the last 10 days: " +
      cspar.column_sparkline([2,4,8,10,0,3,4,5,1,4]) +
-     " on a scale of 1 to 10... so don't get your hopes up about another post.")
+     " on a scale of 1 to 10...\nso don't get your hopes up about another post.")
 ```
 
-    Daily how much I like Twitter the last 10 days ▂▄▇█　▃▄▄▁▄ on a scale of 1 to 10... so don't get your hopes up about another post.
+    Daily how much I like Twitter the last 10 days: ▂▄▇█　▃▄▄▁▄ on a scale of 1 to 10...
+    so don't get your hopes up about another post.
 
 
 #### Comparison Charts
@@ -402,6 +404,7 @@ Also, at the moment some glyphs aren't the same size as others in some fonts, so
 ```python
 import piltdown.waffle as wfl
 
+# Completely real data.
 print("Pets Owned by Aliens by %\n" + 
       wfl.waffle([10, 75, 15], ["Babel Fish", "Tribble", "Wookie"])
      )
