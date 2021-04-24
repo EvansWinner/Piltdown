@@ -32,6 +32,7 @@
     - [Project Goals](#project-goals)
     - [Todo](#todo)
 - [Credits](#credits)
+- [Final words](#final-words)
 
 ## Introduction
 
@@ -65,7 +66,7 @@ on a lark. Don't get all testy with me.
 
 For most of the types of plot, you will specify your data set,
 (typically a list, list of tuples, dict, etc.).
-Generating this from a datafrane or other form is your problem--Piltdown just generates strings. That's all.
+Generating this from a dataframe or other form is your problem--Piltdown just generates strings. That's all.
 There are a million utilities that could be included
 to post your string to Twitter for you,
 or to do other Unicode tricks,
@@ -396,7 +397,11 @@ print("My sleep time for the last 7 days, greater than or less than 8 hours: " +
 
 #### Waffle Charts
 
-Just at the moment you can select your own glyphs (or use the defaults, `literals.WAFFLES`) and that's about it. Waffles fill from top to bottom, left to right, just like European reading order. I intend to write something that will let you fill from top to bottom, then left to right (like... er, ancient Egyption reading order? -- how do I know?) Anyway, writing the routine that rotates ragged two-dimensional lists is, you know, a job for a real programmer.
+Just at the moment you can select your own glyphs (or use the defaults, `literals.WAFFLES`) and that's about it. 
+
+**Note** that I think these glyphs are being counted as two characters each, so that means a 10x10 waffle would cound as 210 characters on your limit (including the 10 newline characters). So... be knowing of that.
+
+Waffles fill from top to bottom, first left-to-right, then right-to-left in alternating lines. I intend to write something that will let you fill from top to bottom, but writing the routine that rotates ragged two-dimensional lists is, you know, a job for a real programmer.
 
 Also, at the moment some glyphs aren't the same size as others in some fonts, so a little testing on Twitter might be called for.
 
@@ -503,6 +508,7 @@ print(util.with_char_count("x" * 281))
   and mixing output with other strings (titles, general writing, etc.)
   to the user/other libraries.
 - Easy to use.
+- Portable with no dependencies other than basic Python 3
 - Just focused on the Twitter use case.
   Not a general solution to the *Grand ASCII-art Data Viz Problem*,
   which is never-ending.
@@ -513,7 +519,7 @@ The README is generated from this Jupyter notebook. Don't forget to re-export it
 
 #### TODO
 
-- Well, yeah, maybe I do want to do bold and italic fonts as a utility function. Also maybe some variables bound to generally useful Unicode characters (smileys, Harvey balls, etc)
+- Maybe an italic font as well, though that seems less useful. Also maybe some variables bound to generally useful Unicode characters (smileys, Harvey balls, etc)
 - Tweet threads? Could it be done? *Should* it be done? Well, yes and no, of course...
 
 A list of plots I got somewhere that looked at a quick glance like they might be possible. Not to be interpreted as firm intentions. More or less in descending order of priority.
@@ -546,4 +552,11 @@ Maybe look at later.
 
 In the immortal words of Olin Shivers: I did it. I did it all, by myself.
 
+## Final words
 
+This yak... is shaved.
+
+
+```python
+
+```
