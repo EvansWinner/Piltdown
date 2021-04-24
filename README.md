@@ -59,6 +59,8 @@ I mean, they're pretty obvious.
 
 2. Screen readers. I don't know how many times I mention it below, but Unicode hacks are inherently unfriendly to the blind. Beware.
 
+3. You will see weird font compatibility issues. Github won't even render everything right every time in this README on Qutebrowser under Linux for me. Sometimes the column sparkline glyphs are weirdly off-center, sometimes the tally marks are missing.... Who knows?
+
 I wrote this for the fun of it,
 on a lark. Don't get all testy with me.
 
@@ -521,6 +523,8 @@ The README is generated from this Jupyter notebook. Don't forget to re-export it
 
 - Maybe an italic font as well, though that seems less useful. Also maybe some variables bound to generally useful Unicode characters (smileys, Harvey balls, etc)
 - Tweet threads? Could it be done? *Should* it be done? Well, yes and no, of course...
+- Instead of telling people to have labels all the same length (eg. horizontal dot chart) just pad to max(len(...))
+- Basically, I'm not going to release this until the horizontal bar chart at least is done, as that's the most important one... possibly the vertical bar chart as well.
 
 A list of plots I got somewhere that looked at a quick glance like they might be possible. Not to be interpreted as firm intentions. More or less in descending order of priority.
 
