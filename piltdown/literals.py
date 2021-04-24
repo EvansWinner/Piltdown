@@ -32,10 +32,7 @@ MONOSPACE_CHARS: str = (
 MONOSPACE: Dict[str, str] = dict(zip(CHAR_KEYS, MONOSPACE_CHARS))
 
 CHAR_KEYS2 = (
-    LATIN_CHARS.upper() 
-    + LATIN_CHARS
-    + GREEK_CHARS.upper()
-    + GREEK_CHARS
+    LATIN_CHARS.upper() + LATIN_CHARS + GREEK_CHARS.upper() + GREEK_CHARS
 )
 
 BOLD_CHARS: str = (
