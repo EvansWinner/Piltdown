@@ -67,7 +67,8 @@ EIGHTHS: Dict[int, str] = {
 }
 
 # Waffle charts
-WAFFLES = "▩▥▦▨▣▤▧"
+WAFFLES = "▩▥▦▤▧▨▣"
+
 
 # Column sparklines
 V8THS = {

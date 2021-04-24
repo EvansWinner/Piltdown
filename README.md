@@ -555,8 +555,3 @@ In the immortal words of Olin Shivers: I did it. I did it all, by myself.
 ## Final words
 
 This yak... is shaved.
-
-
-```python
-
-```
