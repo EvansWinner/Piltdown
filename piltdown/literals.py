@@ -3,11 +3,21 @@ from typing import Dict, List
 
 EMPTY_BLOCK: str = "　"
 
+LATIN_CHARS: str = "abcdefghijklmnopqrstuvwxyz"
+GREEK_CHARS: str = "αβγδεζηθικλμνξοπρστυφχψω"
+
+# When not supplied with a list of labels, we use these
+DEFAULT_CHARS: str = (
+    LATIN_CHARS.upper() + GREEK_CHARS.upper() + LATIN_CHARS + GREEK_CHARS
+)
+DIGITS = "0123456789"
+
+DEFAULT_LABELS: List[str] = list(DEFAULT_CHARS)
 CHAR_KEYS: str = (
     " "
-    + "0123456789"
-    + "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    + "abcdefghijklmnopqrstuvwxyz"
+    + DIGITS
+    + LATIN_CHARS.upper()
+    + LATIN_CHARS
     + ",.:;!?\"'`^~_&@#%+-*=<>()[]{}|/\\$"
 )
 
@@ -21,17 +31,23 @@ MONOSPACE_CHARS: str = (
 
 MONOSPACE: Dict[str, str] = dict(zip(CHAR_KEYS, MONOSPACE_CHARS))
 
-BOLD_CHARS: str = ""
-
-BOLD: Dict[str, str] = dict(zip(CHAR_KEYS, BOLD_CHARS))
-
-# When not supplied with a list of labels, we use these
-LATIN_CHARS: str = "abcdefghijklmnopqrstuvwxyz"
-GREEK_CHARS: str = "αβγδεζηθικλμνξοπρστυφχψω"
-DEFAULT_CHARS: str = (
-    LATIN_CHARS.upper() + GREEK_CHARS.upper() + LATIN_CHARS + GREEK_CHARS
+CHAR_KEYS2 = (
+    LATIN_CHARS.upper() 
+    + LATIN_CHARS
+    + GREEK_CHARS.upper()
+    + GREEK_CHARS
 )
-DEFAULT_LABELS: List[str] = list(DEFAULT_CHARS)
+
+BOLD_CHARS: str = (
+    "𝐀𝐁𝐂𝐃𝐄𝐅𝐆𝐇𝐈𝐉𝐊𝐋𝐌𝐍𝐎𝐏𝐐𝐑𝐒𝐓𝐔𝐕𝐖𝐗𝐘𝐙"
+    + "𝐚𝐛𝐜𝐝𝐞𝐟𝐠𝐡𝐢𝐣𝐤𝐥𝐦𝐧𝐨𝐩𝐪𝐫𝐬𝐭𝐮𝐯𝐰𝐱𝐲𝐳"
+    + "𝚨𝚩𝚪𝚫𝚬𝚭𝚮𝚯𝚰𝚱𝚲𝚳𝚴𝚵𝚶𝚷𝚸𝚺𝚻𝚼𝚽𝚾𝚿𝛀"
+    + "𝛂𝛃𝛄𝛅𝛆𝛇𝛈𝛉𝛊𝛋𝛌𝛍𝛎𝛏𝛐𝛑𝛒𝛓𝛔𝛕𝛖𝛗𝛘𝛙𝛚"
+    + "𝟎𝟏𝟐𝟑𝟒𝟓𝟔𝟕𝟖𝟗𝟬"
+)
+
+BOLD: Dict[str, str] = dict(zip(CHAR_KEYS2, BOLD_CHARS))
+
 
 # Win/Loss Sparklines
 LOSS_CHAR: str = "▄"

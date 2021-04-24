@@ -51,3 +51,19 @@ def with_char_count(string: str) -> str:
         return string
     else:
         return "String too long to post on Twitter"
+
+def bold(string:str)->str:
+    """Convert a string of alphanumerics to Unicode fake bold.
+
+       String can include upper- or lower-case Latin or Greek
+       characters and digits 0-9. Result uses mathemcatical 
+       bold characters from Unicode, so they won't be friendly
+       to screen readers."""
+    ret = ""
+    for char in string:
+        if char in lit.BOLD:
+            ret+=lit.BOLD[char]
+        else:
+            ret+=char
+    return ret
+

@@ -1,5 +1,5 @@
 # Piltdown
-
+[![Generic badge](https://img.shields.io/badge/Works-Kinda-<COLOR>.svg)](https://shields.io/)
 <img src="Piltdown_man.jpg" width="100px" align="right" alt="Piltdown Man"/>
 
 *"Data visualiation for your tweets... making your mindless propaganda look more scientific since 2021!"*
@@ -22,6 +22,7 @@
         - [Waffle Charts](#waffle-charts)
         - [Win/Loss Sparklines](#win-loss-sparklines)
     - [Utilities](#utilities)
+        - [bold()](#bold) -- Bold output using Unicode mathematical bold
         - [cut_above()](#cut_above) -- Add a "cut above this line" line to the output
         - [cut_below()](#cut_below) -- Add a "cut below this line" line to the output
         - [to_monospace()](#to_monospace) -- Write text in Unicode fake monospace (used internally for labels too)
@@ -30,6 +31,7 @@
 - [Hacking](#hacking) *Wherein is -- oh, this is getting boring*
     - [Project Goals](#project-goals)
     - [Todo](#todo)
+- [Credits](#credits)
 
 ## Introduction
 
@@ -430,6 +432,24 @@ print("Pets Owned by Aliens by %\n" +
 
 Various little helpers which you may variously find helpful.
 
+#### bold()
+
+Fake bold using the Unicode mathematical bold characters for Latin and Greek capitals and miniscules, and Arabic digits. Yet again I warn you: screen readers might not like this.
+
+You can include any other character you like (eg., punctuation characters) but they will simply be passed to the return string unchanged.
+
+##### Example
+
+
+```python
+import piltdown.util as util
+
+print("This is a " + util.bold('very "important" thing to say!'))
+```
+
+    This is a 𝐯𝐞𝐫𝐲 "𝐢𝐦𝐩𝐨𝐫𝐭𝐚𝐧𝐭" 𝐭𝐡𝐢𝐧𝐠 𝐭𝐨 𝐬𝐚𝐲!
+
+
 #### to_monospace
 
 Convert text to monospace using then Unicode "fullwidth" characters. Yet again I mention that this does not play well with screen readers.
@@ -476,7 +496,7 @@ print(util.with_char_count("x" * 281))
 - Simple
 - *Really simple*
 - Simple enough to just write static documentation-by-examples here in the README
-- Simple enough that the examples in the documentation here can serve as a test suite
+- Simple enough that the examples in the documentation here can serve as a rudimentary test suite
 - (Mostly) don't try to do anything but create the charts and graphs.
   Just functions that return strings.
   Leave Twitter posting, statistical preprocessing,
@@ -494,7 +514,7 @@ The README is generated from this Jupyter notebook. Don't forget to re-export it
 #### TODO
 
 - Well, yeah, maybe I do want to do bold and italic fonts as a utility function. Also maybe some variables bound to generally useful Unicode characters (smileys, Harvey balls, etc)
-- A simple `count_chars()` utility to verify the whole thing is ≤ 280 chars.
+- Tweet threads? Could it be done? *Should* it be done? Well, yes and no, of course...
 
 A list of plots I got somewhere that looked at a quick glance like they might be possible. Not to be interpreted as firm intentions. More or less in descending order of priority.
 
@@ -522,7 +542,8 @@ Maybe look at later.
 
 
 
+## Credits
 
-```python
+In the immortal words of Olin Shivers: I did it. I did it all, by myself.
 
-```
+
