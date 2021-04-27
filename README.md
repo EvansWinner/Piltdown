@@ -476,7 +476,7 @@ print(util.fullwidth("Witty example text."))
 
 #### monospace
 
-Fake monospace with Unicode mathimatical monospace. The only characters, though, are Latin capitals and miniscules and spaces (which seem to work for some reason) and Arabic digits. **NOTE** No punctuation! So, if you need punctuation, try `fullwidth()` which has punctuation, but which is very wide, and therefore fewer fit in a tweet on a narrow cell phone screen.
+Fake monospace with Unicode mathimatical monospace. The only characters, though, are Latin capitals and miniscules and Arabic digits. **NOTE No punctuation! and no SPACE character!** So, if you need those things, try `fullwidth()` which has them, but which is very wide, and for which therefore fewer characters fit in a tweet on a narrow cell phone screen.
 
 ##### Example
 
@@ -484,11 +484,10 @@ Fake monospace with Unicode mathimatical monospace. The only characters, though,
 ```python
 import piltdown.util as util
 
-print(util.monospace("These frabjous test lines showingly show\nthey line up with what we knowingly know"))
+print(util.monospace("Foobar"))
 ```
 
-    𝚃𝚑𝚎𝚜𝚎 𝚏𝚛𝚊𝚋𝚓𝚘𝚞𝚜 𝚝𝚎𝚜𝚝 𝚕𝚒𝚗𝚎𝚜 𝚜𝚑𝚘𝚠𝚒𝚗𝚐𝚕𝚢 𝚜𝚑𝚘𝚠
-    𝚝𝚑𝚎𝚢 𝚕𝚒𝚗𝚎 𝚞𝚙 𝚠𝚒𝚝𝚑 𝚠𝚑𝚊𝚝 𝚠𝚎 𝚔𝚗𝚘𝚠𝚒𝚗𝚐𝚕𝚢 𝚔𝚗𝚘𝚠
+    𝙵𝚘𝚘𝚋𝚊𝚛
 
 
 #### with_char_count

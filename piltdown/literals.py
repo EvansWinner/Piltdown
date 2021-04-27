@@ -34,7 +34,7 @@ FULLWIDTH: Dict[str, str] = dict(zip(FULLWIDTH_KEYS, FULLWIDTH_CHARS))
 
 MONOSPACE_CHARS: str = (
     "\n"
-    + " "
+    + EMPTY_BLOCK
     + "𝙰𝙱𝙲𝙳𝙴𝙵𝙶𝙷𝙸𝙹𝙺𝙻𝙼𝙽𝙾𝙿𝚀𝚁𝚂𝚃𝚄𝚅𝚆𝚇𝚈𝚉"
     + "𝚊𝚋𝚌𝚍𝚎𝚏𝚐𝚑𝚒𝚓𝚔𝚕𝚖𝚗𝚘𝚙𝚚𝚛𝚜𝚝𝚞𝚟𝚠𝚡𝚢𝚣"
     + "𝟶𝟷𝟸𝟹𝟺𝟻𝟼𝟽𝟾𝟿"
@@ -42,7 +42,7 @@ MONOSPACE_CHARS: str = (
 
 MONOSPACE_KEYS: str = (
     "\n" 
-    + " " # This is not a normal space character!
+    + " " 
     + LATIN_CHARS.upper()
     + LATIN_CHARS
     + DIGITS

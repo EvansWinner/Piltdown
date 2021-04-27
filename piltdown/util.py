@@ -41,9 +41,9 @@ def monospace(string:str) -> str:
        Only Arabic digits and capital and miniscule Latin characters
        are covered, and anything else will ruin alignment in a tweet,
        so if you try to pass anything else in your string (including,
-       for example, punctuation characters) you will get an error. Try
-       the `fulwidth` function instead, which has more characters, but
-       makes the result much wider.
+       for example, punctuation characters and spaces) you will get an
+       error. Try the `fulwidth` function instead, which has more
+       characters, but makes the result much wider.
     """
     ret = ""
     for character in string:
