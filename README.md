@@ -106,7 +106,9 @@ In alphabetical order:
 
 #### Column Sparklines
 
-The Twitter plot that started it all! Or at least, that I noticed had already been done and inspired the rest of this. 
+The Twitter plot that started it all! Lavishly praised by none other than the great Edward Tufte as "...[better than nothing](https://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0003oC)..."!
+
+At any rate, I noticed them and that inspired the rest of this.
 
 ##### Example
 
