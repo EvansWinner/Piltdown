@@ -5,14 +5,15 @@ EMPTY_BLOCK: str = "　"
 
 LATIN_CHARS: str = "abcdefghijklmnopqrstuvwxyz"
 GREEK_CHARS: str = "αβγδεζηθικλμνξοπρστυφχψω"
+DIGITS = "0123456789"
 
 # When not supplied with a list of labels, we use these
 DEFAULT_CHARS: str = (
     LATIN_CHARS.upper() + GREEK_CHARS.upper() + LATIN_CHARS + GREEK_CHARS
 )
-DIGITS = "0123456789"
 
 DEFAULT_LABELS: List[str] = list(DEFAULT_CHARS)
+
 CHAR_KEYS: str = (
     " "
     + DIGITS
@@ -21,7 +22,7 @@ CHAR_KEYS: str = (
     + ",.:;!?\"'`^~_&@#%+-*=<>()[]{}|/\\$"
 )
 
-MONOSPACE_CHARS: str = (
+FULLWIDTH_CHARS: str = (
     EMPTY_BLOCK
     + "０１２３４５６７８９"
     + "ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺ"
@@ -29,11 +30,20 @@ MONOSPACE_CHARS: str = (
     + "，．：；！？＂＇｀＾～＿＆＠＃％＋－＊＝＜＞（）［］｛｝￤／＼＄"
 )
 
-MONOSPACE: Dict[str, str] = dict(zip(CHAR_KEYS, MONOSPACE_CHARS))
+FULLWIDTH: Dict[str, str] = dict(zip(CHAR_KEYS, FULLWIDTH_CHARS))
 
-CHAR_KEYS2 = (
-    LATIN_CHARS.upper() + LATIN_CHARS + GREEK_CHARS.upper() + GREEK_CHARS
+CHAR_KEYS_BOLD: str = LATIN_CHARS.upper() + LATIN_CHARS + GREEK_CHARS.upper() + GREEK_CHARS + DIGITS
+
+MONOSPACE_CHARS: str = (
+    " "
+    + "𝙰𝙱𝙲𝙳𝙴𝙵𝙶𝙷𝙸𝙹𝙺𝙻𝙼𝙽𝙾𝙿𝚀𝚁𝚂𝚃𝚄𝚅𝚆𝚇𝚈𝚉"
+    + "𝚊𝚋𝚌𝚍𝚎𝚏𝚐𝚑𝚒𝚓𝚔𝚕𝚖𝚗𝚘𝚙𝚚𝚛𝚜𝚝𝚞𝚟𝚠𝚡𝚢𝚣"
+    + "𝟶𝟷𝟸𝟹𝟺𝟻𝟼𝟽"
 )
+
+CHAR_KEYS_MONOSPACE: str = " " + LATIN_CHARS.upper() + LATIN_CHARS + DIGITS
+
+MONOSPACE: Dict[str, str] = dict(zip(CHAR_KEYS_MONOSPACE, MONOSPACE_CHARS))
 
 BOLD_CHARS: str = (
     "𝐀𝐁𝐂𝐃𝐄𝐅𝐆𝐇𝐈𝐉𝐊𝐋𝐌𝐍𝐎𝐏𝐐𝐑𝐒𝐓𝐔𝐕𝐖𝐗𝐘𝐙"
@@ -43,7 +53,7 @@ BOLD_CHARS: str = (
     + "𝟎𝟏𝟐𝟑𝟒𝟓𝟔𝟕𝟖𝟗𝟬"
 )
 
-BOLD: Dict[str, str] = dict(zip(CHAR_KEYS2, BOLD_CHARS))
+BOLD: Dict[str, str] = dict(zip(CHAR_KEYS_BOLD, BOLD_CHARS))
 
 
 # Win/Loss Sparklines
@@ -61,6 +71,7 @@ EIGHTHS: Dict[int, str] = {
     3: "▍",
     2: "▎",
     1: "▏",
+    0: "",
 }
 
 # Waffle charts

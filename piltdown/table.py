@@ -27,7 +27,7 @@ def table(data: List[List[str]]) -> str:
         for j, jtem in enumerate(data[i]):
             data[i][j] = jtem + (maxes[j] - len(jtem) + 1) * " "
     # Convert to monospace
-    mono = [list(map(util.to_monospace, row)) for row in data]
+    mono = [list(map(util.fullwidth, row)) for row in data]
     # Convert to a single string with newlines
     ret = ""
     for i in mono:

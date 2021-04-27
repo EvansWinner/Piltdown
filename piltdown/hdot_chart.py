@@ -23,5 +23,5 @@ def hdot_chart(data: List[int], labels: List[str] = lit.DEFAULT_LABELS) -> str:
         raise ValueError(("You don't have enough labels"))
     lines = []
     for label, datum in zip(labels, data):
-        lines.append(util.to_monospace(label) + "|" + hdot_chart_line(datum))
+        lines.append(util.fullwidth(label) + "|" + hdot_chart_line(datum))
     return "\n".join(lines)

@@ -2,17 +2,21 @@
 import piltdown.literals as lit
 
 
-def to_monospace(string: str) -> str:
-    """Monospace a string.
+def fullwidth(string: str) -> str:
+    """Sort of monospace a string.
 
     Given a string of most of the ASCII character set, return a new
-    analogous string composed of the Unicode "monospace" versions
+    analogous string composed of the Unicode fullwidth versions
     of the characters. These are really Asian font "full width" characters
-    and will not play well with screen readers.
+    and will not play well with screen readers. But they are a way
+    to fake monospace that has some punctuation characters (unlike the
+    mathematical monospace set (see function `monospace` but they
+    have the disadvantage of being very wide, and not many will fit in
+    a tweet.
     """
     ret = ""
     for character in string:
-        ret += lit.MONOSPACE[character]
+        ret += lit.FULLWIDTH[character]
     return ret
 
 
@@ -20,13 +24,34 @@ def bold(string: str) -> str:
     """Produce a fake bold string from Unicode math characters.
 
     Warning: Doesn't work with screen readers. Not really
-    advised.
+    advised. Characters that are not in the set of Unicode mathematical
+    bold will just be passed into the return string unchanged. For 
+    punctuation and space characters, this doesn't seem to matter too
+    much.
     """
     ret = ""
     for character in string:
         ret += lit.BOLD[character]
     return ret
 
+
+def monospace(string:str) -> str:
+    """Produce a fake monospace string from Unicode math characters.
+
+       Only Arabic digits and capital and miniscule Latin characters
+       are covered, and anything else will ruin alignment in a tweet,
+       so if you try to pass anything else in your string (including,
+       for example, punctuation characters) you will get an error. Try
+       the `fulwidth` function instead, which has more characters, but
+       makes the result much wider.
+    """
+    ret = ""
+    for character in string:
+        if character in lit.BOLD.keys():
+            ret += lit.BOLD[character]
+        else:
+            raise ValueError("Character not present in Unicode mathematical monospace")
+    return ret
 
 def cut_above() -> str:
     """Return a "cut before this line" line."""

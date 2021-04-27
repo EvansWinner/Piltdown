@@ -12,12 +12,12 @@ def tally(data: Dict[str, int]):
     """
     ret: str = ""
     for label, value in data.items():
-        if all(key in lit.MONOSPACE for key in label):
-            label = util.to_monospace(label)
+        if all(key in lit.FULLWIDTH for key in label):
+            label = util.fullwidth(label)
         fives = value // 5
         ret += (
             label
-            + util.to_monospace("|")
+            + util.fullwidth("|")
             + ((lit.TALLY_FIVE + lit.EMPTY_BLOCK) * fives)
         )
         ret += lit.ONEZIE_TWOZIES[value - fives * 5] + "\n"

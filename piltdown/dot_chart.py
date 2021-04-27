@@ -14,7 +14,7 @@ def dot_chart(data: List[int], labels: List[str] = lit.DEFAULT_LABELS) -> str:
     lines = []
     for label, number in zip(labels, data):
         maximum_length = max(data) + 1
-        line = util.to_monospace(label)
+        line = util.fullwidth(label)
         line += lit.DOT_ONE * number
         line += lit.EMPTY_BLOCK * (maximum_length - len(line))
         lines.append(line)
