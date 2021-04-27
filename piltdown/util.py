@@ -47,8 +47,8 @@ def monospace(string:str) -> str:
     """
     ret = ""
     for character in string:
-        if character in lit.BOLD.keys():
-            ret += lit.BOLD[character]
+        if character in lit.MONOSPACE.keys():
+            ret += lit.MONOSPACE[character]
         else:
             raise ValueError("Character not present in Unicode mathematical monospace")
     return ret

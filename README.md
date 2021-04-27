@@ -25,7 +25,8 @@
         - [bold()](#bold) -- Bold output using Unicode mathematical bold
         - [cut_above()](#cut_above) -- Add a "cut above this line" line to the output
         - [cut_below()](#cut_below) -- Add a "cut below this line" line to the output
-        - [to_monospace()](#to_monospace) -- Write text in Unicode fake monospace (used internally for labels too)
+        - [fullwidth()](#fullwidth) -- Write text in Unicode fullwidth (alternate monospa
+        - [monospace()](#monospace) -- Write text in Unicode fake monospace
         - [with_char_count()](#with_char_count) -- Return failure message if a string is > 280 characters long
         - [with_cut_lines()](#with_cut_lines) -- Wrap output in cut_below() and cut_above()
 - [Hacking](#hacking) *Wherein is -- oh, this is getting boring*
@@ -415,20 +416,20 @@ import piltdown.waffle as wfl
 
 # Completely real data.
 print("Pets Owned by Aliens by %\n" + 
-      wfl.waffle([10, 75, 15], ["Babel Fish", "Tribble", "Wookie"])
+      wfl.waffle([16, 66, 18], ["Babel Fish", "Tribble", "Wookie"])
      )
 ```
 
     Pets Owned by Aliens by %
     ▩▩▩▩▩▩▩▩▩▩
+    ▩▩▩▩▩▩▥▥▥▥
     ▥▥▥▥▥▥▥▥▥▥
     ▥▥▥▥▥▥▥▥▥▥
     ▥▥▥▥▥▥▥▥▥▥
     ▥▥▥▥▥▥▥▥▥▥
     ▥▥▥▥▥▥▥▥▥▥
     ▥▥▥▥▥▥▥▥▥▥
-    ▥▥▥▥▥▥▥▥▥▥
-    ▦▦▦▦▦▥▥▥▥▥
+    ▦▦▦▦▦▦▦▦▥▥
     ▦▦▦▦▦▦▦▦▦▦
     
     ▩ = Babel Fish; ▥ = Tribble; ▦ = Wookie
@@ -457,9 +458,9 @@ print("This is a " + util.bold('very "important" thing to say!'))
     This is a 𝐯𝐞𝐫𝐲 "𝐢𝐦𝐩𝐨𝐫𝐭𝐚𝐧𝐭" 𝐭𝐡𝐢𝐧𝐠 𝐭𝐨 𝐬𝐚𝐲!
 
 
-#### to_monospace
+#### fullwidth
 
-Convert text to monospace using then Unicode "fullwidth" characters. Yet again I mention that this does not play well with screen readers.
+Convert text to fake monospace using the Unicode "fullwidth" character set. Yet again I mention that this does not play well with screen readers. With this you have access to punctuation characters (unlike the monospace() function) but the tradeoff is that they are very wide, and it doesn't take many to go as wide as works on a Twitter on a cell phone.
 
 ##### Example
 
@@ -467,10 +468,27 @@ Convert text to monospace using then Unicode "fullwidth" characters. Yet again I
 ```python
 import piltdown.util as util
 
-print(util.to_monospace("Witty example text."))
+print(util.fullwidth("Witty example text."))
 ```
 
     Ｗｉｔｔｙ　ｅｘａｍｐｌｅ　ｔｅｘｔ．
+
+
+#### monospace
+
+Fake monospace with Unicode mathimatical monospace. The only characters, though, are Latin capitals and miniscules and spaces (which seem to work for some reason) and Arabic digits. **NOTE** No punctuation! So, if you need punctuation, try `fullwidth()` which has punctuation, but which is very wide, and therefore fewer fit in a tweet on a narrow cell phone screen.
+
+##### Example
+
+
+```python
+import piltdown.util as util
+
+print(util.monospace("These frabjous test lines showingly show\nthey line up with what we knowingly know"))
+```
+
+    𝚃𝚑𝚎𝚜𝚎 𝚏𝚛𝚊𝚋𝚓𝚘𝚞𝚜 𝚝𝚎𝚜𝚝 𝚕𝚒𝚗𝚎𝚜 𝚜𝚑𝚘𝚠𝚒𝚗𝚐𝚕𝚢 𝚜𝚑𝚘𝚠
+    𝚝𝚑𝚎𝚢 𝚕𝚒𝚗𝚎 𝚞𝚙 𝚠𝚒𝚝𝚑 𝚠𝚑𝚊𝚝 𝚠𝚎 𝚔𝚗𝚘𝚠𝚒𝚗𝚐𝚕𝚢 𝚔𝚗𝚘𝚠
 
 
 #### with_char_count

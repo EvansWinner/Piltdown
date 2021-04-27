@@ -14,7 +14,7 @@ DEFAULT_CHARS: str = (
 
 DEFAULT_LABELS: List[str] = list(DEFAULT_CHARS)
 
-CHAR_KEYS: str = (
+FULLWIDTH_KEYS: str = (
     " "
     + DIGITS
     + LATIN_CHARS.upper()
@@ -30,20 +30,27 @@ FULLWIDTH_CHARS: str = (
     + "，．：；！？＂＇｀＾～＿＆＠＃％＋－＊＝＜＞（）［］｛｝￤／＼＄"
 )
 
-FULLWIDTH: Dict[str, str] = dict(zip(CHAR_KEYS, FULLWIDTH_CHARS))
-
-CHAR_KEYS_BOLD: str = LATIN_CHARS.upper() + LATIN_CHARS + GREEK_CHARS.upper() + GREEK_CHARS + DIGITS
+FULLWIDTH: Dict[str, str] = dict(zip(FULLWIDTH_KEYS, FULLWIDTH_CHARS))
 
 MONOSPACE_CHARS: str = (
-    " "
+    "\n"
+    + " "
     + "𝙰𝙱𝙲𝙳𝙴𝙵𝙶𝙷𝙸𝙹𝙺𝙻𝙼𝙽𝙾𝙿𝚀𝚁𝚂𝚃𝚄𝚅𝚆𝚇𝚈𝚉"
     + "𝚊𝚋𝚌𝚍𝚎𝚏𝚐𝚑𝚒𝚓𝚔𝚕𝚖𝚗𝚘𝚙𝚚𝚛𝚜𝚝𝚞𝚟𝚠𝚡𝚢𝚣"
-    + "𝟶𝟷𝟸𝟹𝟺𝟻𝟼𝟽"
+    + "𝟶𝟷𝟸𝟹𝟺𝟻𝟼𝟽𝟾𝟿"
 )
 
-CHAR_KEYS_MONOSPACE: str = " " + LATIN_CHARS.upper() + LATIN_CHARS + DIGITS
+MONOSPACE_KEYS: str = (
+    "\n" 
+    + " " # This is not a normal space character!
+    + LATIN_CHARS.upper()
+    + LATIN_CHARS
+    + DIGITS
+)
 
-MONOSPACE: Dict[str, str] = dict(zip(CHAR_KEYS_MONOSPACE, MONOSPACE_CHARS))
+MONOSPACE: Dict[str, str] = dict(zip(MONOSPACE_KEYS, MONOSPACE_CHARS))
+
+BOLD_KEYS: str = LATIN_CHARS.upper() + LATIN_CHARS + GREEK_CHARS.upper() + GREEK_CHARS + DIGITS
 
 BOLD_CHARS: str = (
     "𝐀𝐁𝐂𝐃𝐄𝐅𝐆𝐇𝐈𝐉𝐊𝐋𝐌𝐍𝐎𝐏𝐐𝐑𝐒𝐓𝐔𝐕𝐖𝐗𝐘𝐙"
@@ -53,7 +60,7 @@ BOLD_CHARS: str = (
     + "𝟎𝟏𝟐𝟑𝟒𝟓𝟔𝟕𝟖𝟗𝟬"
 )
 
-BOLD: Dict[str, str] = dict(zip(CHAR_KEYS_BOLD, BOLD_CHARS))
+BOLD: Dict[str, str] = dict(zip(BOLD_KEYS, BOLD_CHARS))
 
 
 # Win/Loss Sparklines
