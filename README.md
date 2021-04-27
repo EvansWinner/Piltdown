@@ -406,6 +406,8 @@ Just at the moment you can select your own glyphs (or use the defaults, `literal
 
 **Note** that I think these glyphs are being counted as two characters each, so that means a 10x10 waffle would cound as 210 characters on your limit (including the 10 newline characters). So... be knowing of that.
 
+**Alzo note** The moiré effect of these glyphs is obviously pretty terrible. If you can find a better set for the defaults, please let me know.
+
 Waffles fill from top to bottom, first left-to-right, then right-to-left in alternating lines. I intend to write something that will let you fill from top to bottom, but writing the routine that rotates ragged two-dimensional lists is, you know, a job for a real programmer.
 
 Also, at the moment some glyphs aren't the same size as others in some fonts, so a little testing on Twitter might be called for.
