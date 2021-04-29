@@ -21,23 +21,27 @@ def hbar_line(
 
 def hbar(
     data: List[float],
-    lables: List[str] = lit.DEFAULT_LABELS,
+    labels: List[str] = lit.DEFAULT_LABELS,
     eighths: Dict[int, str] = lit.EIGHTHS,
     eight_eighths: str = lit.EIGHT_EIGHTHS,
     empty: str = lit.EMPTY_BLOCK,
+    interpolate_blank_lines: bool = False
 ) -> str:
     """Generate a horizontal bar chart."""
-    if len(data) > len(lables):
-        raise ValueError("Not enough lables")
-    # Left-pad lables so they're all the same length
-    lable_max: int = max(map(len, lables))
-    for i,item in enumerate(lables):
-        lables[i]=item.rjust(lable_max)
+    if len(data) > len(labels):
+        raise ValueError("Not enough labels")
+    # Left-pad labels so they're all the same length
+    label_max: int = max(map(len, labels))
+    for i,item in enumerate(labels):
+        labels[i]=item.rjust(label_max)
     # Produce chart
     ret: str = ""
-    for line, lable in zip(data, lables):
-        ret += util.fullwidth(lable) 
-        ret += hbar_line(line, eighths, eight_eighths, empty) + str(line) + "\n"
+    max_bar_len = len(hbar_line(max(data),eighths,eight_eighths,empty))
+    for line, label in zip(data, labels):
+        ret += util.fullwidth(label) 
+        bar=hbar_line(line, eighths, eight_eighths, empty)
+        ret += bar + (max_bar_len - len(bar)) * lit.ZERO_EIGHTHS + str(line) + "\n"
+        if interpolate_blank_lines and label != labels[-1]:ret+="\n"
     return ret
 
 
