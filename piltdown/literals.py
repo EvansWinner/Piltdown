@@ -68,7 +68,7 @@ ZERO_CHAR: str = "－"
 
 # Horizontal bar charts
 EIGHT_EIGHTHS: str = "█"
-ZERO_EIGHTHS: str = " " # Not a regular space char
+ZERO_EIGHTHS: str = "⠀" # Not a regular space char
 EIGHTHS: Dict[int, str] = {
     7: "▉",
     6: "▊",

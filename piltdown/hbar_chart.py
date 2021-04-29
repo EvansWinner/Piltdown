@@ -9,7 +9,6 @@ def hbar_line(
     length: float,
     eighths: Dict[int, str],
     eight_eighths: str,
-    empty: str,
 ) -> str:
     """Generate a single bar for a horizontal bar chart."""
     ret: str = ""
@@ -24,8 +23,7 @@ def hbar(
     labels: List[str] = lit.DEFAULT_LABELS,
     eighths: Dict[int, str] = lit.EIGHTHS,
     eight_eighths: str = lit.EIGHT_EIGHTHS,
-    empty: str = lit.EMPTY_BLOCK,
-    interpolate_blank_lines: bool = False
+    print_values: bool = True
 ) -> str:
     """Generate a horizontal bar chart."""
     if len(data) > len(labels):
@@ -36,13 +34,10 @@ def hbar(
         labels[i]=item.rjust(label_max)
     # Produce chart
     ret: str = ""
-    max_bar_len = len(hbar_line(max(data),eighths,eight_eighths,empty))
     for line, label in zip(data, labels):
         ret += util.fullwidth(label) 
-        bar=hbar_line(line, eighths, eight_eighths, empty)
-        ret += bar + (max_bar_len - len(bar)) * lit.ZERO_EIGHTHS + str(line) + "\n"
-        if interpolate_blank_lines and label != labels[-1]:ret+="\n"
+        ret += hbar_line(line, eighths, eight_eighths)
+        if line == 0 and print_values:ret+=" "
+        if print_values:ret+=str(line)
+        ret += "\n"
     return ret
-
-
-print(hbar([72, 93, 22, 54],["Cats","Monkeys","Dogs","Me"]))
