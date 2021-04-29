@@ -12,7 +12,7 @@ def hdot_chart_line(datum: int) -> str:
 def hdot_chart(data: List[int], labels: List[str] = lit.DEFAULT_LABELS) -> str:
     """Given a list of integers, plot a horizontal dot plot.
 
-    Optional second argument is a list of lables. They will be
+    Optional second argument is a list of labels. They will be
     converted to monospace, but in order for your table to line
     up you need to have the same number of characters in each,
     so space-pad the left end of your strings. Otherwise, take
