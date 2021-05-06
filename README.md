@@ -15,6 +15,7 @@
         - [Column Sparklines](#column-sparklines)
         - [Comparison Charts](#comparison-charts)
         - [Dot Charts](#dot-charts)
+        - [Horizontal Bar Charts](#horizontal-bar-charts)
         - [Horizontal Dot Charts](#horizontal-dot-charts)
         - [Scaled-Up Numbers](#scaled-up-numbers)
         - [Tables](#tables)
@@ -60,7 +61,7 @@ I mean, they're pretty obvious.
 
 2. Screen readers. I don't know how many times I mention it below, but Unicode hacks are inherently unfriendly to the blind. Beware.
 
-3. You will see weird font compatibility issues. Github won't even render everything right every time in this README on Qutebrowser under Linux for me. Sometimes the column sparkline glyphs are weirdly off-center, sometimes the tally marks are missing.... Who knows?
+3. You will see weird font compatibility issues. Github won't even render everything right every time in this README on Qutebrowser under Linux for me. Sometimes the column sparkline glyphs are weirdly off-center, sometimes the tally marks are missing.... Who knows? Some platform/font combinations render this stuff correctly, some don't. That's just all there is to it.
 
 I wrote this for the fun of it,
 on a lark. Don't get all testy with me.
@@ -218,6 +219,29 @@ print("Who Knocked On My Door Today?" +
     ＡＢＣ
     
     A = Jehovah's Witnesses; B = Mormons; C = Avon Lady
+
+
+#### Horizontal Bar Charts
+
+##### Example
+
+
+```python
+import piltdown.hbar_chart as hbar
+import piltdown.util as util
+import piltdown.literals as lit
+
+# Source: https://i.imgur.com/CswBFYU.jpg
+print(util.bold("Which should cost less: a\ngallon of gas or a gallon of milk?\n\n") +
+                hbar.hbar([43, 57], ["YES % ", "NO % "]))
+```
+
+    𝐖𝐡𝐢𝐜𝐡 𝐬𝐡𝐨𝐮𝐥𝐝 𝐜𝐨𝐬𝐭 𝐥𝐞𝐬𝐬: 𝐚
+    𝐠𝐚𝐥𝐥𝐨𝐧 𝐨𝐟 𝐠𝐚𝐬 𝐨𝐫 𝐚 𝐠𝐚𝐥𝐥𝐨𝐧 𝐨𝐟 𝐦𝐢𝐥𝐤?
+    
+    ＹＥＳ　％　█████████43
+    　ＮＯ　％　████████████57
+    
 
 
 #### Horizontal Dot Charts
@@ -546,6 +570,7 @@ The README is generated from this Jupyter notebook. Don't forget to re-export it
 - Tweet threads? Could it be done? *Should* it be done? Well, yes and no, of course...
 - Instead of telling people to have labels all the same length (eg. horizontal dot chart) just pad to max(len(...))
 - Basically, I'm not going to release this until the horizontal bar chart at least is done, as that's the most important one... possibly the vertical bar chart as well.
+- Better examples. Better... or at least funnier.
 
 A list of plots I got somewhere that looked at a quick glance like they might be possible. Not to be interpreted as firm intentions. More or less in descending order of priority.
 
