@@ -26,7 +26,7 @@
         - [bold()](#bold) -- Bold output using Unicode mathematical bold
         - [cut_above()](#cut_above) -- Add a "cut above this line" line to the output
         - [cut_below()](#cut_below) -- Add a "cut below this line" line to the output
-        - [fullwidth()](#fullwidth) -- Write text in Unicode fullwidth (alternate monospa
+        - [fullwidth()](#fullwidth) -- Write text in Unicode fullwidth (alternate monospace)
         - [monospace()](#monospace) -- Write text in Unicode fake monospace
         - [with_char_count()](#with_char_count) -- Return failure message if a string is > 280 characters long
         - [with_cut_lines()](#with_cut_lines) -- Wrap output in cut_below() and cut_above()
@@ -569,14 +569,12 @@ The README is generated from this Jupyter notebook. Don't forget to re-export it
 - Maybe an italic font as well, though that seems less useful. Also maybe some variables bound to generally useful Unicode characters (smileys, Harvey balls, etc)
 - Tweet threads? Could it be done? *Should* it be done? Well, yes and no, of course...
 - Instead of telling people to have labels all the same length (eg. horizontal dot chart) just pad to max(len(...))
-- Basically, I'm not going to release this until the horizontal bar chart at least is done, as that's the most important one... possibly the vertical bar chart as well.
 - Better examples. Better... or at least funnier.
 
 A list of plots I got somewhere that looked at a quick glance like they might be possible. Not to be interpreted as firm intentions. More or less in descending order of priority.
 
 - bullet diagram
 - stem and leaf 
-- horiz barchart
 - heatmap
 - boxplot
 - stacked bar
