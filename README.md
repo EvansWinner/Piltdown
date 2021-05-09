@@ -1,13 +1,17 @@
-# Piltdown
-[![Generic badge](https://img.shields.io/badge/Works-Kinda-<COLOR>.svg)](https://shields.io/)
 <img src="Piltdown_man.jpg" width="100px" align="right" alt="Piltdown Man"/>
 
+# Piltdown
+[![Generic badge](https://img.shields.io/badge/Works-Kinda-<COLOR>.svg)](https://shields.io/)
+
+
 *"Data visualiation for your tweets... making your mindless propaganda look more scientific since 2021!"*
+
 
 **YE OLDE TABLE OF CONTENTS**
 
 - [Introduction](#introduction) *Wherein is answered the question of what it is and what it's for*
     - [Caveats](#caveats)
+    - [Obligatory Screenshot](#obligatory-screenshot)
     - [The Basic Idea](#the-basic-idea)
 - [Installation](#installation) *Wherein is answered the question of how to get it*
 - [Documentation by Example](#documentation-by-example) *Wherein is answered the question of how to make it go go go!*
@@ -65,6 +69,10 @@ I mean, they're pretty obvious.
 
 I wrote this for the fun of it,
 on a lark. Don't get all testy with me.
+
+### Obligatory Screenshot
+
+<img src="screenshot.png" width="300px" alt="screenshot"/>
 
 ### The Basic Idea
 
