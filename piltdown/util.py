@@ -31,7 +31,10 @@ def bold(string: str) -> str:
     """
     ret = ""
     for character in string:
-        ret += lit.BOLD[character]
+        if character in lit.BOLD.keys():
+            ret += lit.BOLD[character]
+        else:
+            raise ValueError("Character not present in Unicode mathematical bold")
     return ret
 
 
