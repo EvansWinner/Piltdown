@@ -225,6 +225,8 @@ print("Who Knocked On My Door Today?" +
 
 ##### Example
 
+Basic bar chart. Bars will be scaled. The resolution is 1/8th of a character width.
+
 
 ```python
 import piltdown.hbar_chart as hbar
@@ -242,6 +244,69 @@ print(util.bold("Which should cost less: a\ngallon of gas or a gallon of milk?\n
     ＹＥＳ　％　█████████43
     　ＮＯ　％　████████████57
     
+
+
+##### Example
+
+If you omit the second, `labels` argument, `lit.DEFAULT_LABELS` will be used. You can also pass an explicit `max_line_length` argument to change the length of the longest line including label and the values printed at the end of each line. Default is currently 20.
+
+If `print_values` is `False` then it will suppress those values.
+
+
+```python
+import piltdown.hbar_chart as hbar
+import piltdown.util as util
+
+print(hbar.hbar([0.23,1.4,0.3,4], max_line_len=30))
+print("-" * 20 + "\n")
+print(hbar.hbar([1000,2000,3000],print_values=False))
+print("-" * 20 + "\n")
+print(util.bold("US Covid 19 Deaths by Month, Jul-Dec 2020") + "\n\n" +
+      hbar.hbar([24863,30239,23336,23578,36596,57638],
+                ["Jul","Aug","Sep","Oct","Nov","Dec"]) +
+      "\nSource: https://bit.ly/3eYNVYw")
+print("-" * 20 + "\n")
+print(util.bold("COMPOSITION OF THE MOON % TAKEN FROM LUNAR SOIL") + "\n\n" +
+      hbar.hbar([42,21,13,8,7,6,3],["O","Si","Fe","Ca","Al","Mg","X"]) +
+      "\nX=Other; source: my son's t-shirt")
+```
+
+    Ａ█▌0.23
+    Ｂ████████▊1.4
+    Ｃ█▉0.3
+    Ｄ█████████████████████████4
+    
+    --------------------
+    
+    Ａ█████
+    Ｂ██████████
+    Ｃ███████████████
+    
+    --------------------
+    
+    𝐔𝐒 𝐂𝐨𝐯𝐢𝐝 𝟏𝟗 𝐃𝐞𝐚𝐭𝐡𝐬 𝐛𝐲 𝐌𝐨𝐧𝐭𝐡, 𝐉𝐮𝐥-𝐃𝐞𝐜 𝟐𝟎𝟐𝟎
+    
+    Ｊｕｌ█████▏24863
+    Ａｕｇ██████▎30239
+    Ｓｅｐ████▉23336
+    Ｏｃｔ████▉23578
+    Ｎｏｖ███████▋36596
+    Ｄｅｃ████████████57638
+    
+    Source: https://bit.ly/3eYNVYw
+    --------------------
+    
+    𝐂𝐎𝐌𝐏𝐎𝐒𝐈𝐓𝐈𝐎𝐍 𝐎𝐅 𝐓𝐇𝐄 𝐌𝐎𝐎𝐍 % 𝐓𝐀𝐊𝐄𝐍 𝐅𝐑𝐎𝐌 𝐋𝐔𝐍𝐀𝐑 𝐒𝐎𝐈𝐋
+    
+    　Ｏ████████████████42
+    Ｓｉ████████21
+    Ｆｅ█████13
+    Ｃａ███8
+    Ａｌ██▋7
+    Ｍｇ██▎6
+    　Ｘ█▏3
+    
+    X=Other; source: my son's t-shirt
 
 
 #### Horizontal Dot Charts
