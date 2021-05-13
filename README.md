@@ -72,7 +72,7 @@ on a lark. Don't get all testy with me.
 
 ### Obligatory Screenshot
 
-<img src="screenshot.png" width="300px" alt="screenshot"/>
+<img src="screenshot.jpg" width="300px" alt="screenshot"/>
 
 ### The Basic Idea
 
@@ -266,14 +266,20 @@ import piltdown.hbar_chart as hbar
 import piltdown.util as util
 
 print(hbar.hbar([0.23,1.4,0.3,4], max_line_len=30))
+
 print("-" * 20 + "\n")
+
 print(hbar.hbar([1000,2000,3000],print_values=False))
+
 print("-" * 20 + "\n")
+
 print(util.bold("US Covid 19 Deaths by Month, Jul-Dec 2020") + "\n\n" +
       hbar.hbar([24863,30239,23336,23578,36596,57638],
                 ["Jul","Aug","Sep","Oct","Nov","Dec"]) +
       "\nSource: https://bit.ly/3eYNVYw")
+
 print("-" * 20 + "\n")
+
 print(util.bold("COMPOSITION OF THE MOON % TAKEN FROM LUNAR SOIL") + "\n\n" +
       hbar.hbar([42,21,13,8,7,6,3],["O","Si","Fe","Ca","Al","Mg","X"]) +
       "\nX=Other; source: my son's t-shirt")
@@ -409,7 +415,7 @@ print(sun.scaled_up_number("1,235.7%", leading_pad=0) +
 
 #### Tables
 
-Very small tables can be done using the util.to_monospace trick. Little two-way contingency tables might be done, for example.
+Very small tables can be done using the `util.fullwidth` trick (see under Utilites below). Little two-way contingency tables might be done, for example.
 
 ##### Example
 
