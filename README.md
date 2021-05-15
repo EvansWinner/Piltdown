@@ -7,11 +7,19 @@
 *"Data visualiation for your tweets... making your mindless propaganda look more scientific since 2021!"*
 
 
+> *"We increased our conversion rate 549% with Piltdown!"* -- Joe Blip, Fake Testimonials 'Я' Us
+
+
+> *"Piltdown cured my son's cancer!"* --Not the same guy as previous testimonial
+
+**OBLIGATORY SCREENSHOT**
+
+<img src="screenshot.jpg" width="300px" alt="screenshot"/>
+
 **YE OLDE TABLE OF CONTENTS**
 
 - [Introduction](#introduction) *Wherein is answered the question of what it is and what it's for*
     - [Caveats](#caveats)
-    - [Obligatory Screenshot](#obligatory-screenshot)
     - [The Basic Idea](#the-basic-idea)
 - [Installation](#installation) *Wherein is answered the question of how to get it*
 - [Documentation by Example](#documentation-by-example) *Wherein is answered the question of how to make it go go go!*
@@ -69,10 +77,6 @@ I mean, they're pretty obvious.
 
 I wrote this for the fun of it,
 on a lark. Don't get all testy with me.
-
-### Obligatory Screenshot
-
-<img src="screenshot.jpg" width="300px" alt="screenshot"/>
 
 ### The Basic Idea
 
