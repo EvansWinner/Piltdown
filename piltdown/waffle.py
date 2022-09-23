@@ -11,7 +11,7 @@ import piltdown.literals as lit
 def waffle(
     data: List[int],
     categories: List[str],
-    glyphs: str = lit.WAFFLES,
+    glyphs: str = lit.WAFFLES_COLOR,
     layout: List[int] = [0, 0],
     ltor: bool = True,
 ) -> str:

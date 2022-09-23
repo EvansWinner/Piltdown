@@ -81,8 +81,16 @@ EIGHTHS: Dict[int, str] = {
 }
 
 # Waffle charts
-WAFFLES = "▩▥▦▤▧▨▣"
+BLOCK_RED    = "🟥"
+BLOCK_BLUE   = "🟦"
+BLOCK_ORANGE = "🟧"
+BLOCK_YELLOW = "🟨"
+BLOCK_GREEN  = "🟩"
+BLOCK_PURPLE = "🟪"
+BLOCK_BROWN  = "🟫"
 
+WAFFLES_GRAYSCALE = "▩▥▦▤▧▨▣"
+WAFFLES_COLOR = BLOCK_RED + BLOCK_BLUE + BLOCK_YELLOW + BLOCK_PURPLE + BLOCK_BROWN + BLOCK_GREEN + BLOCK_ORANGE
 
 # Column sparklines
 V8THS = {
@@ -215,3 +223,28 @@ DEFAULT3X5FONT: Dict[str, List[str]] = {
         "░▖░",
     ],
 }
+SPACE_FULLWIDTH = "　"
+similey = "☺"
+frownie = "☹"
+star = "★"
+harveyBallThreeQuarter = "◕"
+harveyBallEmpty = "⭘"
+harveyBallFull = "⬤"
+harveyBallOneQuarter = "◔"
+harveyBallTopHalf = "◓"
+harveyBallBottomHalf = "◒"
+harveyBallRightHalf = "◑"
+harveyBallLeftHalf = "◐"
+checkmark = "✓"
+pointingFingerRight = "☞"
+boxFilled = "◼"
+box = "◻"
+pieUpperLeft = "◷"
+pielowerLeft = "◶"
+pieLowerRight = "◵"
+pieUpperRight = "◴"
+circleLarge = "◯"
+bulletPointOpen = "◦"
+bulletPointClosed = "•"
+
+
