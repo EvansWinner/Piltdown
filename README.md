@@ -42,6 +42,7 @@
         - [monospace()](#monospace) -- Write text in Unicode fake monospace
         - [with_char_count()](#with_char_count) -- Return failure message if a string is > 280 characters long
         - [with_cut_lines()](#with_cut_lines) -- Wrap output in cut_below() and cut_above()
+         - [Misc_Unicode_thingies](#Misc_Unicode_thingies) -- Harvey balls, bullet points, and a few other things
 - [Hacking](#hacking) *Wherein is -- oh, this is getting boring*
     - [Project Goals](#project-goals)
     - [Todo](#todo)
@@ -607,7 +608,12 @@ Use to wrap output. It will return a failure message if your string is longer th
 
 **OBVIOUS NOTE** If you're going to use `with_cut_lines` or similar with this, put the call to that *outside* of the call to `with_char_count`, or else you'll end up counting the cut lines.
 
-##### Example
+#### Misc Unicode thingies
+
+See the bottom of piltdown/literals.py for some variables
+bound to various Unicode characters that might be useful,
+like Harvey balls, bullet points, and so forth.
+
 
 
 ```python
