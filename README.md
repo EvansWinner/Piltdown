@@ -509,11 +509,11 @@ print("My sleep time for the last 7 days, greater than or less than 8 hours: " +
 
 #### Waffle Charts
 
-Just at the moment you can select your own glyphs (or use the defaults, `literals.WAFFLES`) and that's about it. 
+Just at the moment you can select your own glyphs, or use `literals.WAFFLES_COLOR` (the default) or `literals.WAFFLES_GRAYSCALE`, and that's about it. 
 
 **Note** that I think these glyphs are being counted as two characters each, so that means a 10x10 waffle would cound as 210 characters on your limit (including the 10 newline characters). So... be knowing of that.
 
-**Alzo note** The moiré effect of these glyphs is obviously pretty terrible. If you can find a better set for the defaults, please let me know.
+**Alzo note** The moiré effect of the grayscale glyphs is pretty terrible. Use the color ones if you can, or roll your own.
 
 Waffles fill from top to bottom, first left-to-right, then right-to-left in alternating lines. I intend to write something that will let you fill from top to bottom, but writing the routine that rotates ragged two-dimensional lists is, you know, a job for a real programmer.
 
@@ -532,18 +532,18 @@ print("Pets Owned by Aliens by %\n" +
 ```
 
     Pets Owned by Aliens by %
-    ▩▩▩▩▩▩▩▩▩▩
-    ▩▩▩▩▩▩▥▥▥▥
-    ▥▥▥▥▥▥▥▥▥▥
-    ▥▥▥▥▥▥▥▥▥▥
-    ▥▥▥▥▥▥▥▥▥▥
-    ▥▥▥▥▥▥▥▥▥▥
-    ▥▥▥▥▥▥▥▥▥▥
-    ▥▥▥▥▥▥▥▥▥▥
-    ▦▦▦▦▦▦▦▦▥▥
-    ▦▦▦▦▦▦▦▦▦▦
+    🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥
+    🟥🟥🟥🟥🟥🟥🟦🟦🟦🟦
+    🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦
+    🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦
+    🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦
+    🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦
+    🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦
+    🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦
+    🟨🟨🟨🟨🟨🟨🟨🟨🟦🟦
+    🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
     
-    ▩ = Babel Fish; ▥ = Tribble; ▦ = Wookie
+    🟥 = Babel Fish; 🟦 = Tribble; 🟨 = Wookie
     
 
 
@@ -649,8 +649,6 @@ The README is generated from this Jupyter notebook. Don't forget to re-export it
 
 #### TODO
 
-- Maybe an italic font as well, though that seems less useful. Also maybe some variables bound to generally useful Unicode characters (smileys, Harvey balls, etc)
-- Tweet threads? Could it be done? *Should* it be done? Well, yes and no, of course...
 - Instead of telling people to have labels all the same length (eg. horizontal dot chart) just pad to max(len(...))
 - Better examples. Better... or at least funnier.
 
