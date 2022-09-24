@@ -27,6 +27,7 @@
         - [Column Sparklines](#column-sparklines)
         - [Comparison Charts](#comparison-charts)
         - [Dot Charts](#dot-charts)
+        - [Dot Matrix Plots](#dot-matrix-plots)
         - [Horizontal Bar Charts](#horizontal-bar-charts)
         - [Horizontal Dot Charts](#horizontal-dot-charts)
         - [Scaled-Up Numbers](#scaled-up-numbers)
@@ -42,7 +43,7 @@
         - [monospace()](#monospace) -- Write text in Unicode fake monospace
         - [with_char_count()](#with_char_count) -- Return failure message if a string is > 280 characters long
         - [with_cut_lines()](#with_cut_lines) -- Wrap output in cut_below() and cut_above()
-         - [Misc_Unicode_thingies](#Misc_Unicode_thingies) -- Harvey balls, bullet points, and a few other things
+        - [Misc_Unicode_thingies](#Misc_Unicode_thingies) -- Harvey balls, bullet points, and a few other things
 - [Hacking](#hacking) *Wherein is -- oh, this is getting boring*
     - [Project Goals](#project-goals)
     - [Todo](#todo)
@@ -140,7 +141,7 @@ print("Daily how much I like Twitter the last 10 days: " +
 
     Daily how much I like Twitter the last 10 days: ▂▄▇█　▃▄▄▁▄ on a scale of 1 to 10...
     so don't get your hopes up about another post.
-
+    
 
 #### Comparison Charts
 Comparison charts are, at least minimally, just tables with checkmarks and X's in the cells. See [Tables](#tables). There is no Unicode fullwidth checkmark, so you need to use something else that is basically something in the ASCII subset that is represented by the Unicode fullwidth set. X's and O's or T's (for True) and F's (for False) are probably the best bets.
@@ -174,7 +175,7 @@ print("\n" +
     
     Mplib = Matplotlib
     Com = Comprehensive; Ver = Well-verified; Awe = Awesome
-
+    
 
 #### Dot Charts
 
@@ -205,7 +206,7 @@ print("Number of Episodes of Animaniacs My Son Watched This Week\n" +
     ＊＊＊　＊＊＊
     ＭＴＷＲＦＳＵ
     
-
+    
 
 ##### Example
 
@@ -232,7 +233,11 @@ print("Who Knocked On My Door Today?" +
     ＡＢＣ
     
     A = Jehovah's Witnesses; B = Mormons; C = Avon Lady
+    
 
+#### Dot Matrix Plot
+
+See [Waffle Charts](#waffle-charts).
 
 #### Horizontal Bar Charts
 
@@ -257,7 +262,7 @@ print(util.bold("Which should cost less: a\ngallon of gas or a gallon of milk?\n
     ＹＥＳ　％　█████████43
     　ＮＯ　％　████████████57
     
-
+    
 
 ##### Example
 
@@ -326,7 +331,7 @@ print(util.bold("COMPOSITION OF THE MOON % TAKEN FROM LUNAR SOIL") + "\n\n" +
     　Ｘ█▏3
     
     X=Other; source: my son's t-shirt
-
+    
 
 #### Horizontal Dot Charts
 
@@ -362,7 +367,7 @@ print(
     Ｆｒ|⚫⚫
     Ｓａ|⚫
     Ｓｕ|⚫⚫⚫⚫
-
+    
 
 #### Scaled Up Numbers
 
@@ -392,7 +397,7 @@ print(sun.scaled_up_number("42", leading_pad=10) +
     　　　　　　　　　　░░█　█▄▟
     
     Meaning of life, the Universe, and everything.
-
+    
 
 ##### Example
 
@@ -416,7 +421,7 @@ print(sun.scaled_up_number("1,235.7%", leading_pad=0) +
     　▗█▖　░▜░　█▄▟　▜▄▛　█▄▛　░▖░　█░░　▞░█
     
     Your Mom's age compared to mine, as a very precise percentage.
-
+    
 
 #### Tables
 
@@ -450,7 +455,7 @@ print("Handedness (L or R) vs. Sex (M or F) Contingency Table\n" +
     Ｆ　　　４４　４　　４８　
     Ｔｏｔ　８７　１３　１００
     
-
+    
 
 #### Tally Charts
 
@@ -482,7 +487,7 @@ print("How Many Chocolate Bars My Family Ate This Week\n\n" +
     Ｓａ￤ᚎ　ᚎ　ᚎ　ᚎ　ᚎ　𝍩
     Ｓｕ￤ᚎ　ᚎ　ᚎ　𝍪
     
-
+    
 
 #### Win Loss Sparklines
 
@@ -506,15 +511,17 @@ print("My sleep time for the last 7 days, greater than or less than 8 hours: " +
 ```
 
     My sleep time for the last 7 days, greater than or less than 8 hours: ▀▄▄▀－▀ rounded to nearest half hour.
-
+    
 
 #### Waffle Charts
 
-Just at the moment you can select your own glyphs, or use `literals.WAFFLES_COLOR` (the default) or `literals.WAFFLES_GRAYSCALE`, and that's about it. 
+Just at the moment you can select your own glyphs, or use `literals.WAFFLES_COLOR` (the default) or `literals.WAFFLES_GRAYSCALE`, or roll your own.
 
 **Note** that I think these glyphs are being counted as two characters each, so that means a 10x10 waffle would cound as 210 characters on your limit (including the 10 newline characters). So... be knowing of that.
 
 **Alzo note** The moiré effect of the grayscale glyphs is pretty terrible. Use the color ones if you can, or roll your own.
+
+**Alzo alzo note** The `layout` argument is a tuple of two integers: preffered (width,height). Zero means calculate based on the other value. Two zeros (the default) means try to get as close to a square as possible.
 
 Waffles fill from top to bottom, first left-to-right, then right-to-left in alternating lines. I intend to write something that will let you fill from top to bottom, but writing the routine that rotates ragged two-dimensional lists is, you know, a job for a real programmer.
 
@@ -532,21 +539,50 @@ print("Pets Owned by Aliens by %\n" +
      )
 ```
 
-    Pets Owned by Aliens by %
-    🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥
-    🟥🟥🟥🟥🟥🟥🟦🟦🟦🟦
-    🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦
-    🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦
-    🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦
-    🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦
-    🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦
-    🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦
-    🟨🟨🟨🟨🟨🟨🟨🟨🟦🟦
-    🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
-    
-    🟥 = Babel Fish; 🟦 = Tribble; 🟨 = Wookie
+
+    ---------------------------------------------------------------------------
+
+    ValueError                                Traceback (most recent call last)
+
+    Input In [17], in <cell line: 4>()
+          1 import piltdown.waffle as wfl
+          3 # Completely real data.
+          4 print("Pets Owned by Aliens by %\n" + 
+    ----> 5       wfl.waffle([16, 66, 18], ["Babel Fish", "Tribble", "Wookie"])
+          6      )
     
 
+    File ~\h\piltdown\piltdown\waffle.py:39, in waffle(data, categories, glyphs, layout, ltor)
+         34     layout[1] = layout[0]
+         35 if (
+         36     layout[0] * layout[1] >= sum(data) + layout[0] + layout[1]
+         37     or layout[0] * layout[1] <= sum(data) - layout[0] - layout[1]
+         38 ):
+    ---> 39     raise ValueError("Layout not consistent with data length")
+         40 # Get glyphs as a bare string.
+         41 chars = ""
+    
+
+    ValueError: Layout not consistent with data length
+
+
+##### Example
+
+You can do "dot matrix plots" as well, using the `literals.DOTMATRIX`.
+Let's get real. It's basically just another kind of Waffle chart.
+
+Observe that the routine that tries to make the result into a rectangle can only do so much if you give it oddly-lengthed data.
+
+
+```python
+import piltdown.waffle as wfl
+import piltdown.literals as lit
+
+# Completely real data.
+print("Proportion of different colored dots in the below self-referential plot:\n" + 
+      wfl.waffle([13, 23, 18, 3], ["First color", "Second ", "Third", "Fourth"], glyphs = lit.DOTMATRIX)
+     )
+```
 
 ### Utilities
 
@@ -567,9 +603,6 @@ import piltdown.util as util
 print("This is a " + util.bold('very "important" thing to say!'))
 ```
 
-    This is a 𝐯𝐞𝐫𝐲 "𝐢𝐦𝐩𝐨𝐫𝐭𝐚𝐧𝐭" 𝐭𝐡𝐢𝐧𝐠 𝐭𝐨 𝐬𝐚𝐲!
-
-
 #### fullwidth
 
 Convert text to fake monospace using the Unicode "fullwidth" character set. Yet again I mention that this does not play well with screen readers. With this you have access to punctuation characters (unlike the monospace() function) but the tradeoff is that they are very wide, and it doesn't take many to go as wide as works on a Twitter on a cell phone.
@@ -583,9 +616,6 @@ import piltdown.util as util
 print(util.fullwidth("Witty example text."))
 ```
 
-    Ｗｉｔｔｙ　ｅｘａｍｐｌｅ　ｔｅｘｔ．
-
-
 #### monospace
 
 Fake monospace with Unicode mathimatical monospace. The only characters, though, are Latin capitals and miniscules and Arabic digits. **NOTE No punctuation! and no SPACE character!** So, if you need those things, try `fullwidth()` which has them, but which is very wide, and for which therefore fewer characters fit in a tweet on a narrow cell phone screen.
@@ -598,9 +628,6 @@ import piltdown.util as util
 
 print(util.monospace("Foobar"))
 ```
-
-    𝙵𝚘𝚘𝚋𝚊𝚛
-
 
 #### with_char_count
 
@@ -623,10 +650,6 @@ print(util.with_char_count("This is short enough to be a tweet!"))
 
 print(util.with_char_count("x" * 281))
 ```
-
-    This is short enough to be a tweet!
-    String too long to post on Twitter
-
 
 ## Hacking
 
@@ -666,22 +689,7 @@ A list of plots I got somewhere that looked at a quick glance like they might be
 - boxplot
 - stacked bar
 - grouped barchart
-- lollypop chart
 - pictorial unit -- basically allow custom characters for the dot chart, one per line
-
-Maybe look at later.
-- treemap
-- funnel
-- linear process diagram
-- nested/layered proportional area 
-- pyramid diagram
-- dumbell plot
-- partition layer chart icicle diag
-- stepped line graph
-- kagi chart
-- dot matix
-
-
 
 ## Credits
 

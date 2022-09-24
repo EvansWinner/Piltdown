@@ -21,7 +21,7 @@ def waffle(
     can use the default set of glyphs. Otherwise pass a string of
     single Unicode characters and they will be used in order.
     Categories should be a list of strings for the key. Layout is
-    a tuple of two integers: preffered (width,height). Zero mean
+    a tuple of two integers: preffered (width,height). Zero means
     calculate based on the other value. Two zeros (the default)
     means try to get as close to a square as possible.
     """
