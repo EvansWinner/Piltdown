@@ -12,7 +12,7 @@ def waffle(
     data: List[int],
     categories: List[str],
     glyphs: str = lit.WAFFLES_COLOR,
-    layout: List[int] = [0, 0],
+    layout: List[int] = None,
     ltor: bool = True,
 ) -> str:
     """Produce a waffle chart.
@@ -25,10 +25,15 @@ def waffle(
     calculate based on the other value. Two zeros (the default)
     means try to get as close to a square as possible.
     """
+    # On what planet do I want to define a default argument
+    # and then have it changed underneath me? Guido is a moron.
+    if layout is None:
+        layout = [0,0]
     if len(data) != len(categories):
         raise ValueError("Data/categories length mismatch")
     if len(data) > len(glyphs):
         raise ValueError("Not enough glyphs")
+    # Calculate side length if we want to auto-square the result
     if layout == [0, 0]:
         layout[0] = int(round(math.sqrt(sum(data))))
         layout[1] = layout[0]

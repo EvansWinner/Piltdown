@@ -521,7 +521,7 @@ Just at the moment you can select your own glyphs, or use `literals.WAFFLES_COLO
 
 **Alzo note** The moiré effect of the grayscale glyphs is pretty terrible. Use the color ones if you can, or roll your own.
 
-**Alzo alzo note** The `layout` argument is a tuple of two integers: preffered (width,height). Zero means calculate based on the other value. Two zeros (the default) means try to get as close to a square as possible.
+**Alzo alzo note** The `layout` argument is a tuple of two integers: preffered `[width,height]`. Zero means calculate based on the other value. Two zeros (the default) means try to get as close to a square as possible.
 
 Waffles fill from top to bottom, first left-to-right, then right-to-left in alternating lines. I intend to write something that will let you fill from top to bottom, but writing the routine that rotates ragged two-dimensional lists is, you know, a job for a real programmer.
 
@@ -539,32 +539,21 @@ print("Pets Owned by Aliens by %\n" +
      )
 ```
 
-
-    ---------------------------------------------------------------------------
-
-    ValueError                                Traceback (most recent call last)
-
-    Input In [17], in <cell line: 4>()
-          1 import piltdown.waffle as wfl
-          3 # Completely real data.
-          4 print("Pets Owned by Aliens by %\n" + 
-    ----> 5       wfl.waffle([16, 66, 18], ["Babel Fish", "Tribble", "Wookie"])
-          6      )
+    Pets Owned by Aliens by %
+    🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥
+    🟥🟥🟥🟥🟥🟥🟦🟦🟦🟦
+    🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦
+    🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦
+    🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦
+    🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦
+    🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦
+    🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦
+    🟨🟨🟨🟨🟨🟨🟨🟨🟦🟦
+    🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
     
-
-    File ~\h\piltdown\piltdown\waffle.py:39, in waffle(data, categories, glyphs, layout, ltor)
-         34     layout[1] = layout[0]
-         35 if (
-         36     layout[0] * layout[1] >= sum(data) + layout[0] + layout[1]
-         37     or layout[0] * layout[1] <= sum(data) - layout[0] - layout[1]
-         38 ):
-    ---> 39     raise ValueError("Layout not consistent with data length")
-         40 # Get glyphs as a bare string.
-         41 chars = ""
+    🟥 = Babel Fish; 🟦 = Tribble; 🟨 = Wookie
     
-
-    ValueError: Layout not consistent with data length
-
+    
 
 ##### Example
 
@@ -583,6 +572,20 @@ print("Proportion of different colored dots in the below self-referential plot:\
       wfl.waffle([13, 23, 18, 3], ["First color", "Second ", "Third", "Fourth"], glyphs = lit.DOTMATRIX)
      )
 ```
+
+    Proportion of different colored dots in the below self-referential plot:
+    🔴🔴🔴🔴🔴🔴🔴🔴
+    🔴🔴🔴🔴🔴🔵🔵🔵
+    🔵🔵🔵🔵🔵🔵🔵🔵
+    🔵🔵🔵🔵🔵🔵🔵🔵
+    🟠🟠🟠🟠🔵🔵🔵🔵
+    🟠🟠🟠🟠🟠🟠🟠🟠
+    🟡🟡🟠🟠🟠🟠🟠🟠
+    🟡
+    
+    🔴 = First color; 🔵 = Second ; 🟠 = Third; 🟡 = Fourth
+    
+    
 
 ### Utilities
 
@@ -603,6 +606,9 @@ import piltdown.util as util
 print("This is a " + util.bold('very "important" thing to say!'))
 ```
 
+    This is a 𝐯𝐞𝐫𝐲 "𝐢𝐦𝐩𝐨𝐫𝐭𝐚𝐧𝐭" 𝐭𝐡𝐢𝐧𝐠 𝐭𝐨 𝐬𝐚𝐲!
+    
+
 #### fullwidth
 
 Convert text to fake monospace using the Unicode "fullwidth" character set. Yet again I mention that this does not play well with screen readers. With this you have access to punctuation characters (unlike the monospace() function) but the tradeoff is that they are very wide, and it doesn't take many to go as wide as works on a Twitter on a cell phone.
@@ -616,6 +622,9 @@ import piltdown.util as util
 print(util.fullwidth("Witty example text."))
 ```
 
+    Ｗｉｔｔｙ　ｅｘａｍｐｌｅ　ｔｅｘｔ．
+    
+
 #### monospace
 
 Fake monospace with Unicode mathimatical monospace. The only characters, though, are Latin capitals and miniscules and Arabic digits. **NOTE No punctuation! and no SPACE character!** So, if you need those things, try `fullwidth()` which has them, but which is very wide, and for which therefore fewer characters fit in a tweet on a narrow cell phone screen.
@@ -628,6 +637,9 @@ import piltdown.util as util
 
 print(util.monospace("Foobar"))
 ```
+
+    𝙵𝚘𝚘𝚋𝚊𝚛
+    
 
 #### with_char_count
 
@@ -650,6 +662,10 @@ print(util.with_char_count("This is short enough to be a tweet!"))
 
 print(util.with_char_count("x" * 281))
 ```
+
+    This is short enough to be a tweet!
+    String too long to post on Twitter
+    
 
 ## Hacking
 
