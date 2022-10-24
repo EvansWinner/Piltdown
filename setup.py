@@ -1,13 +1,14 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
-  name='Piltdown',
-  version='0.1.0',
-  author='Evans Winner',
-  author_email='evans.winner@gmail.com',
-  packages=['piltdown'],
-  url='http://github.com/evanswinner/piltdown',
-  license='LICENSE',
-  description='Unicode data viz for your Twitter posts.',
-  long_description=open('README.md').read(),
+    name='Piltdown',
+    version='0.1.0',
+    author='Evans Winner',
+    author_email='evans.winner@gmail.com',
+    # package_dir={"":"piltdown"},
+    packages=find_packages(),
+    url='http://github.com/evanswinner/piltdown',
+    license='LICENSE',
+    description='Unicode data viz for your Twitter posts.',
+    long_description=open('README.md').read(),
 )
