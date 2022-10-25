@@ -101,15 +101,23 @@ and thus becometh Robert your parent's brother.
 
 ## Installation
 
+### Option 1
+
+> pip3 install piltdown
+
+or your local equivalent (eg. `pip3 install piltdown` )
+
+### Option 2
+
 Clone the repository, `cd` to your new `piltdown` directory, and then do --
 
-    pip install .
-    
-or the local equivalent (eg. `pip3 install .` )
+> pip install .
 
-Or at some point maybe I will make it installable from PyPi or whatever it's called.
+or your local equivalent.
 
-Or you can just, like, load up the files any old way you want. It's pretty simple.
+### Option 3
+
+Just, like, load up the files any old way you want. It's pretty simple.
 
 Anyway, if you do the pip thing, then import things as you need them as per the examples in, you guessed it, the Documentation section below.
 
@@ -141,7 +149,7 @@ print("Daily how much I like Twitter the last 10 days: " +
 
     Daily how much I like Twitter the last 10 days: ▂▄▇█　▃▄▄▁▄ on a scale of 1 to 10...
     so don't get your hopes up about another post.
-    
+
 
 #### Comparison Charts
 Comparison charts are, at least minimally, just tables with checkmarks and X's in the cells. See [Tables](#tables). There is no Unicode fullwidth checkmark, so you need to use something else that is basically something in the ASCII subset that is represented by the Unicode fullwidth set. X's and O's or T's (for True) and F's (for False) are probably the best bets.
@@ -175,7 +183,7 @@ print("\n" +
     
     Mplib = Matplotlib
     Com = Comprehensive; Ver = Well-verified; Awe = Awesome
-    
+
 
 #### Dot Charts
 
@@ -206,7 +214,7 @@ print("Number of Episodes of Animaniacs My Son Watched This Week\n" +
     ＊＊＊　＊＊＊
     ＭＴＷＲＦＳＵ
     
-    
+
 
 ##### Example
 
@@ -233,7 +241,7 @@ print("Who Knocked On My Door Today?" +
     ＡＢＣ
     
     A = Jehovah's Witnesses; B = Mormons; C = Avon Lady
-    
+
 
 #### Dot Matrix Plot
 
@@ -262,7 +270,7 @@ print(util.bold("Which should cost less: a\ngallon of gas or a gallon of milk?\n
     ＹＥＳ　％　█████████43
     　ＮＯ　％　████████████57
     
-    
+
 
 ##### Example
 
@@ -331,7 +339,7 @@ print(util.bold("COMPOSITION OF THE MOON % TAKEN FROM LUNAR SOIL") + "\n\n" +
     　Ｘ█▏3
     
     X=Other; source: my son's t-shirt
-    
+
 
 #### Horizontal Dot Charts
 
@@ -367,7 +375,7 @@ print(
     Ｆｒ|⚫⚫
     Ｓａ|⚫
     Ｓｕ|⚫⚫⚫⚫
-    
+
 
 #### Scaled Up Numbers
 
@@ -397,7 +405,7 @@ print(sun.scaled_up_number("42", leading_pad=10) +
     　　　　　　　　　　░░█　█▄▟
     
     Meaning of life, the Universe, and everything.
-    
+
 
 ##### Example
 
@@ -421,7 +429,7 @@ print(sun.scaled_up_number("1,235.7%", leading_pad=0) +
     　▗█▖　░▜░　█▄▟　▜▄▛　█▄▛　░▖░　█░░　▞░█
     
     Your Mom's age compared to mine, as a very precise percentage.
-    
+
 
 #### Tables
 
@@ -455,7 +463,7 @@ print("Handedness (L or R) vs. Sex (M or F) Contingency Table\n" +
     Ｆ　　　４４　４　　４８　
     Ｔｏｔ　８７　１３　１００
     
-    
+
 
 #### Tally Charts
 
@@ -487,7 +495,7 @@ print("How Many Chocolate Bars My Family Ate This Week\n\n" +
     Ｓａ￤ᚎ　ᚎ　ᚎ　ᚎ　ᚎ　𝍩
     Ｓｕ￤ᚎ　ᚎ　ᚎ　𝍪
     
-    
+
 
 #### Win Loss Sparklines
 
@@ -511,7 +519,7 @@ print("My sleep time for the last 7 days, greater than or less than 8 hours: " +
 ```
 
     My sleep time for the last 7 days, greater than or less than 8 hours: ▀▄▄▀－▀ rounded to nearest half hour.
-    
+
 
 #### Waffle Charts
 
@@ -553,7 +561,7 @@ print("Pets Owned by Aliens by %\n" +
     
     🟥 = Babel Fish; 🟦 = Tribble; 🟨 = Wookie
     
-    
+
 
 ##### Example
 
@@ -585,7 +593,7 @@ print("Proportion of different colored dots in the below self-referential plot:\
     
     🔴 = First color; 🔵 = Second ; 🟠 = Third; 🟡 = Fourth
     
-    
+
 
 ### Utilities
 
@@ -607,7 +615,7 @@ print("This is a " + util.bold('very "important" thing to say!'))
 ```
 
     This is a 𝐯𝐞𝐫𝐲 "𝐢𝐦𝐩𝐨𝐫𝐭𝐚𝐧𝐭" 𝐭𝐡𝐢𝐧𝐠 𝐭𝐨 𝐬𝐚𝐲!
-    
+
 
 #### fullwidth
 
@@ -623,7 +631,7 @@ print(util.fullwidth("Witty example text."))
 ```
 
     Ｗｉｔｔｙ　ｅｘａｍｐｌｅ　ｔｅｘｔ．
-    
+
 
 #### monospace
 
@@ -639,7 +647,7 @@ print(util.monospace("Foobar"))
 ```
 
     𝙵𝚘𝚘𝚋𝚊𝚛
-    
+
 
 #### with_char_count
 
@@ -665,7 +673,7 @@ print(util.with_char_count("x" * 281))
 
     This is short enough to be a tweet!
     String too long to post on Twitter
-    
+
 
 ## Hacking
 
